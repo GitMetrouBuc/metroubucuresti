@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politică de Confidențialitate — Metrou București</title>
+    <meta name="description" content="Politica de confidențialitate pentru aplicația Android Metrou București">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:       #1A1A2E;
+            --navy-mid:   #16213E;
+            --navy-light: #0F3460;
+            --teal:       #4ECDC4;
+            --teal-dark:  #00A693;
+            --teal-pale:  rgba(78,205,196,0.12);
+            --teal-pale2: rgba(78,205,196,0.06);
+            --white:      #FFFFFF;
+            --off-white:  #F7F9FC;
+            --text-main:  #1A1A2E;
+            --text-body:  #3D4555;
+            --text-muted: #7A8399;
+            --border:     rgba(26,26,46,0.08);
+            --accent-strip: linear-gradient(90deg, #FFD700 20%, #FF0000 40%, #0000FF 60%, #00FF00 80%, #FFA500 100%);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Source Sans 3', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text-body); background: var(--off-white); }
+        .line-strip { height: 4px; background: var(--accent-strip); }
+        header { background: var(--navy); color: var(--white); padding: 56px 24px 48px; text-align: center; position: relative; overflow: hidden; }
+        header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(78,205,196,0.18) 0%, transparent 70%); pointer-events: none; }
+        .header-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--teal-pale); border: 1.5px solid rgba(78,205,196,0.35); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 26px; }
+        header h1 { font-family: 'Outfit', sans-serif; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
+        .header-meta { font-size: 0.9rem; color: rgba(255,255,255,0.55); font-weight: 300; letter-spacing: 0.03em; }
+        .header-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; padding: 6px 14px; background: var(--teal-pale); border: 1px solid rgba(78,205,196,0.3); border-radius: 999px; font-size: 0.78rem; font-family: 'Outfit', sans-serif; font-weight: 500; color: var(--teal); letter-spacing: 0.04em; text-transform: uppercase; }
+        .nav-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(26,26,46,0.06); }
+        .nav-bar a { text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 500; padding: 7px 16px; border-radius: 999px; border: 1.5px solid var(--border); color: var(--text-muted); transition: all 0.2s; white-space: nowrap; }
+        .nav-bar a:hover, .nav-bar a.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+        .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+        .toc { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px 32px; margin-bottom: 48px; }
+        .toc-title { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 14px; }
+        .toc ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; counter-reset: toc-item; }
+        .toc li { counter-increment: toc-item; }
+        .toc a { text-decoration: none; color: var(--text-body); font-size: 0.88rem; display: flex; align-items: baseline; gap: 8px; transition: color 0.15s; }
+        .toc a::before { content: counter(toc-item, decimal-leading-zero); font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 600; color: var(--teal); flex-shrink: 0; }
+        .toc a:hover { color: var(--navy); }
+        @media (max-width: 520px) { .toc ol { grid-template-columns: 1fr; } }
+        .section { margin-bottom: 44px; scroll-margin-top: 80px; }
+        .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+        .section-num { width: 32px; height: 32px; border-radius: 8px; background: var(--navy); color: var(--teal); display: flex; align-items: center; justify-content: center; font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+        .section h2 { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--text-main); letter-spacing: -0.01em; }
+        .section p { margin-bottom: 14px; }
+        .section p:last-child { margin-bottom: 0; }
+        .section h3 { font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main); margin: 20px 0 10px; }
+        .section ul, .section ol { padding-left: 20px; margin-bottom: 14px; }
+        .section li { margin-bottom: 6px; }
+        .section a { color: var(--teal-dark); text-decoration: none; font-weight: 600; }
+        .section a:hover { text-decoration: underline; }
+        .callout { border-radius: 12px; padding: 16px 20px; margin: 16px 0; display: flex; gap: 12px; align-items: flex-start; }
+        .callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+        .callout-body { flex: 1; font-size: 0.92rem; }
+        .callout-body strong { display: block; margin-bottom: 4px; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 600; }
+        .callout.info  { background: var(--teal-pale2); border: 1px solid rgba(78,205,196,0.2); }
+        .callout.info  .callout-body strong { color: var(--teal-dark); }
+        .callout.good  { background: rgba(56,142,60,0.06); border: 1px solid rgba(56,142,60,0.2); }
+        .callout.good  .callout-body strong { color: #2e7d32; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+        .data-table th { background: var(--navy); color: var(--teal); font-family: 'Outfit', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 10px 14px; text-align: left; }
+        .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table tr:nth-child(even) td { background: var(--teal-pale2); }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-family: 'Outfit', sans-serif; font-weight: 600; }
+        .tag.local  { background: rgba(56,142,60,0.12); color: #2e7d32; }
+        .tag.admob  { background: rgba(255,152,0,0.12); color: #e65100; }
+        .tag.never  { background: var(--teal-pale); color: var(--teal-dark); }
+        footer { background: var(--navy); color: rgba(255,255,255,0.55); padding: 40px 24px; text-align: center; }
+        footer .footer-brand { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem; color: var(--white); margin-bottom: 8px; }
+        footer p { font-size: 0.85rem; margin-bottom: 6px; }
+        footer a { color: var(--teal); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .footer-links { margin-top: 16px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: 0.83rem; }
+        .footer-copyright { margin-top: 20px; font-size: 0.78rem; opacity: 0.5; }
+        @media (max-width: 600px) { .container { padding: 32px 16px 60px; } .toc { padding: 20px; } .data-table { font-size: 0.82rem; } }
+    </style>
+</head>
+<body>
+
+<div class="line-strip"></div>
+
+<header>
+    <div class="header-icon">🔒</div>
+    <h1>Politică de Confidențialitate</h1>
+    <p class="header-meta">Metrou București — Aplicație Android</p>
+    <div class="header-badge">🛡️ Ultima actualizare: Martie 2026</div>
+</header>
+
+<nav class="nav-bar">
+    <a href="metrou-bucuresti-terms.html">Termeni și Condiții</a>
+    <a href="metrou-bucuresti-privacy.html" class="active">Politică de Confidențialitate</a>
+    <a href="metrou-bucuresti-data-usage.html">Utilizare Date</a>
+</nav>
+
+<div class="container">
+
+    <div class="callout good">
+        <span class="callout-icon">✅</span>
+        <div class="callout-body">
+            <strong>Pe scurt</strong>
+            Aproape toate datele rămân pe dispozitivul tău. Nu colectăm informații personale, nu folosim instrumente de analiză și nu vindem date. Singura procesare de date de către terți provine de la Google AdMob (pentru reclame), care necesită consimțământul tău GDPR înainte de activare.
+        </div>
+    </div>
+
+    <div class="toc">
+        <p class="toc-title">Cuprins</p>
+        <ol>
+            <li><a href="#s1">Ce date utilizează aplicația</a></li>
+            <li><a href="#s2">Stocare locală</a></li>
+            <li><a href="#s3">Publicitate &amp; AdMob</a></li>
+            <li><a href="#s4">Permisiuni</a></li>
+            <li><a href="#s5">Integrări terțe</a></li>
+            <li><a href="#s6">Partajarea datelor</a></li>
+            <li><a href="#s7">Drepturile tale</a></li>
+            <li><a href="#s8">Confidențialitatea copiilor</a></li>
+            <li><a href="#s9">Modificări ale politicii</a></li>
+            <li><a href="#s10">Contact</a></li>
+        </ol>
+    </div>
+
+    <section class="section" id="s1">
+        <div class="section-header">
+            <div class="section-num">01</div>
+            <h2>Ce date utilizează aplicația</h2>
+        </div>
+        <p>Tabelul de mai jos rezumă fiecare categorie de date utilizată de aplicație și unde ajung acestea.</p>
+        <table class="data-table">
+            <thead>
+                <tr><th>Tip de date</th><th>Scop</th><th>Unde ajung</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>GPS / locație</td><td>Urmărire rute, stații din apropiere</td><td><span class="tag local">Doar local</span></td></tr>
+                <tr><td>Note personale</td><td>Note scrise de utilizator pentru stații</td><td><span class="tag local">Doar local</span></td></tr>
+                <tr><td>Rute favorite</td><td>Preferințe rute salvate</td><td><span class="tag local">Doar local</span></td></tr>
+                <tr><td>Setări și preferințe aplicație</td><td>Temă, limbă, dimensiune font</td><td><span class="tag local">Doar local</span></td></tr>
+                <tr><td>Rapoarte de erori</td><td>Depanare (opt-in, doar prin e-mail)</td><td><span class="tag local">Local până la trimitere</span></td></tr>
+                <tr><td>ID publicitar</td><td>Reclame personalizate (necesită consimțământ)</td><td><span class="tag admob">Google AdMob</span></td></tr>
+                <tr><td>Info dispozitiv / OS</td><td>Targetare publicitară (necesită consimțământ)</td><td><span class="tag admob">Google AdMob</span></td></tr>
+                <tr><td>Sănătate, contacte, mesaje</td><td>—</td><td><span class="tag never">Niciodată colectate</span></td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section" id="s2">
+        <div class="section-header">
+            <div class="section-num">02</div>
+            <h2>Stocare locală — Ce rămâne pe dispozitivul tău</h2>
+        </div>
+        <p>Următoarele date sunt create și stocate exclusiv pe dispozitivul tău Android, prin SharedPreferences și stocare locală de fișiere. Niciunul dintre ele nu este transmis către serverele noastre:</p>
+        <ul>
+            <li><strong>Note despre stații</strong> — note text pe care le scrii pentru stații individuale</li>
+            <li><strong>Rute favorite</strong> — rute salvate pentru acces rapid</li>
+            <li><strong>Setări aplicație</strong> — temă (light / dark / sistem), limbă, dimensiune font și preferința de comportament la urmărirea rutei</li>
+            <li><strong>Rapoarte de erori</strong> — stocate local dacă aplicația se blochează; trimise către noi doar dacă alegi explicit să trimiți unul prin e-mail din Setări</li>
+            <li><strong>Stare termeni &amp; consimțământ</strong> — un indicator care confirmă că ai acceptat termenii la prima lansare</li>
+        </ul>
+        <div class="callout info">
+            <span class="callout-icon">ℹ️</span>
+            <div class="callout-body">
+                <strong>GPS în timpul urmăririi rutei</strong>
+                Când activezi urmărirea rutei, aplicația citește poziția ta GPS pentru a evidenția progresul pe rută. Aceste date sunt folosite în timp real pe dispozitivul tău și nu sunt înregistrate sau transmise nicăieri.
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="s3">
+        <div class="section-header">
+            <div class="section-num">03</div>
+            <h2>Publicitate &amp; AdMob</h2>
+        </div>
+        <p>Aplicația este gratuită și susținută de reclame furnizate de <strong>Google AdMob</strong>.</p>
+
+        <h3>Consimțământ GDPR</h3>
+        <p>La prima lansare (și ori de câte ori este impus legal), apare un formular de consimțământ GDPR — oferit prin Platforma de mesagerie pentru utilizatori (UMP) a Google. Opțiunile tale:</p>
+        <ul>
+            <li><strong>Acceptă reclame personalizate</strong> — AdMob poate folosi ID-ul tău publicitar și informațiile despre dispozitiv pentru a afișa reclame relevante.</li>
+            <li><strong>Refuză / folosește reclame nepersonalizate</strong> — reclamele sunt afișate în continuare, dar fără personalizare. AdMob colectează totuși unele semnale contextuale (ex. locație aproximativă, contextul aplicației).</li>
+        </ul>
+        <p>Poți revizui sau reseta consimțământul oricând prin <strong>Setări → Despre → Resetare consimțământ</strong>.</p>
+
+        <h3>Ce poate colecta AdMob (dacă ești de acord)</h3>
+        <ul>
+            <li>ID publicitar Google</li>
+            <li>Model dispozitiv, versiune OS, rețea mobilă</li>
+            <li>Locație aproximativă (pe baza IP)</li>
+            <li>Date de interacțiune cu reclamele (afișări, clicuri)</li>
+        </ul>
+        <p>Pentru detalii complete consultați <a href="https://policies.google.com/privacy" target="_blank">Politica de confidențialitate Google</a> și <a href="https://support.google.com/admob/answer/6128543" target="_blank">practicile de date AdMob</a>.</p>
+
+        <h3>Dezactivare sau resetare</h3>
+        <ul>
+            <li>Android 12+: <strong>Setări → Confidențialitate → Reclame → Șterge ID-ul publicitar</strong></li>
+            <li>Android anterior: <strong>Setări → Google → Reclame → Dezactivează personalizarea reclamelor</strong></li>
+            <li>Sau vizitează <a href="https://www.google.com/settings/ads" target="_blank">Setări reclame Google</a></li>
+        </ul>
+    </section>
+
+    <section class="section" id="s4">
+        <div class="section-header">
+            <div class="section-num">04</div>
+            <h2>Permisiunile solicitate de aplicație</h2>
+        </div>
+        <ul>
+            <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION</strong> — opțional; folosit pentru urmărirea rutei și găsirea stațiilor din apropiere. Poate fi acordat sau revocat oricând din Setări Android.</li>
+            <li><strong>INTERNET</strong> — obligatoriu pentru încărcarea hărților OSM și afișarea reclamelor AdMob.</li>
+            <li><strong>AD_ID</strong> — obligatoriu conform politicii Google Play când AdMob este integrat; folosit doar dacă ești de acord cu reclame personalizate.</li>
+            <li><strong>POST_NOTIFICATIONS</strong> (Android 13+) — opțional; solicitat doar pentru notificările serviciului de prim-plan la urmărirea rutei.</li>
+        </ul>
+    </section>
+
+    <section class="section" id="s5">
+        <div class="section-header">
+            <div class="section-num">05</div>
+            <h2>Integrări terțe</h2>
+        </div>
+        <ul>
+            <li><strong>OpenStreetMap (OSM)</strong> — hărțile sunt încărcate de pe serverele OSM când folosești vizualizarea hartă. Serverele OSM primesc o solicitare HTTP standard care include adresa ta IP.</li>
+            <li><strong>OSRM</strong> — interogări de rutare open-source pentru funcția de navigare pe hartă.</li>
+            <li><strong>Aplicații externe de hărți</strong> (Google Maps, Waze etc.) — lansate la solicitarea ta explicită când deschizi o locație extern.</li>
+            <li><strong>Aplicații de e-mail</strong> — folosite doar dacă alegi să trimiți un raport de erori; nicio dată nu este trimisă automat.</li>
+        </ul>
+    </section>
+
+    <section class="section" id="s6">
+        <div class="section-header">
+            <div class="section-num">06</div>
+            <h2>Partajarea datelor</h2>
+        </div>
+        <p>Nu vindem, nu schimbăm și nu închiriem informațiile tale personale niciunei terțe părți. Singurele date care părăsesc dispozitivul tău sunt:</p>
+        <ul>
+            <li>Semnale publicitare trimise către Google AdMob (doar după consimțământ)</li>
+            <li>Solicitări HTTP către serverele de hărți OSM/OSRM (înregistrare IP standard de către acele servere)</li>
+            <li>E-mailuri cu rapoarte de erori — trimise doar dacă le inițiezi manual</li>
+        </ul>
+    </section>
+
+    <section class="section" id="s7">
+        <div class="section-header">
+            <div class="section-num">07</div>
+            <h2>Drepturile și controalele tale</h2>
+        </div>
+        <ul>
+            <li><strong>Acces &amp; ștergere</strong> — toate datele tale sunt pe dispozitiv; șterge-le prin Setări Android → Aplicații → Metrou București → Șterge date, sau dezinstalând aplicația.</li>
+            <li><strong>Locație</strong> — revocă oricând din Setări Android → Aplicații → Metrou București → Permisiuni.</li>
+            <li><strong>Consimțământ reclame</strong> — resetează prin Setări → Despre → Resetare consimțământ din aplicație.</li>
+            <li><strong>Rapoarte de erori</strong> — stocate local; tu decizi dacă trimiți fiecare raport. Șterge-le din Setări → Rapoarte erori.</li>
+        </ul>
+    </section>
+
+    <section class="section" id="s8">
+        <div class="section-header">
+            <div class="section-num">08</div>
+            <h2>Confidențialitatea copiilor</h2>
+        </div>
+        <p>Aplicația nu este destinată copiilor cu vârsta sub 13 ani. Nu colectăm cu bună știință informații personale de la copii. Dacă credeți că un copil a furnizat date personale prin intermediul aplicației, vă rugăm să ne contactați și vom lua măsurile necesare.</p>
+    </section>
+
+    <section class="section" id="s9">
+        <div class="section-header">
+            <div class="section-num">09</div>
+            <h2>Modificări ale politicii</h2>
+        </div>
+        <p>Putem actualiza această Politică de confidențialitate periodic. Când o facem, vom actualiza data „Ultima actualizare" din partea de sus a acestei pagini și vă putem notifica printr-o notificare în aplicație pentru modificări semnificative. Utilizarea continuă a aplicației după intrarea în vigoare a modificărilor constituie acceptarea politicii actualizate.</p>
+    </section>
+
+    <section class="section" id="s10">
+        <div class="section-header">
+            <div class="section-num">10</div>
+            <h2>Contact</h2>
+        </div>
+        <p>Pentru orice întrebări sau solicitări legate de confidențialitate:</p>
+        <ul>
+            <li><strong>E-mail:</strong> <a href="mailto:help@metroubucuresti.ro">help@metroubucuresti.ro</a></li>
+            <li><strong>În aplicație:</strong> Setări → Despre → Contact</li>
+            <li><strong>Website:</strong> <a href="https://www.metroubucuresti.ro" target="_blank">www.metroubucuresti.ro</a></li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <p class="footer-brand">Metrou București</p>
+    <p>Aplicație neoficială de navigare în metroul din București · Android</p>
+    <div class="footer-links">
+        <a href="mailto:help@metroubucuresti.ro">help@metroubucuresti.ro</a>
+        <a href="metrou-bucuresti-terms.html">Termeni și Condiții</a>
+        <a href="metrou-bucuresti-data-usage.html">Utilizare Date</a>
+    </div>
+    <p class="footer-copyright">© 2024–2026 LUXTECH INNOVATION SRL. Toate drepturile rezervate.</p>
+</footer>
+
+</body>
+</html>

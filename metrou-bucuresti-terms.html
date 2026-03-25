@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termeni și Condiții — Metrou București</title>
+    <meta name="description" content="Termenii și condițiile pentru aplicația Android Metrou București">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy:       #1A1A2E;
+            --navy-mid:   #16213E;
+            --navy-light: #0F3460;
+            --teal:       #4ECDC4;
+            --teal-dark:  #00A693;
+            --teal-pale:  rgba(78,205,196,0.12);
+            --teal-pale2: rgba(78,205,196,0.06);
+            --white:      #FFFFFF;
+            --off-white:  #F7F9FC;
+            --text-main:  #1A1A2E;
+            --text-body:  #3D4555;
+            --text-muted: #7A8399;
+            --border:     rgba(26,26,46,0.08);
+            --accent-strip: linear-gradient(90deg, #FFD700 20%, #FF0000 40%, #0000FF 60%, #00FF00 80%, #FFA500 100%);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Source Sans 3', sans-serif; font-size: 16px; line-height: 1.7; color: var(--text-body); background: var(--off-white); }
+        .line-strip { height: 4px; background: var(--accent-strip); }
+        header { background: var(--navy); color: var(--white); padding: 56px 24px 48px; text-align: center; position: relative; overflow: hidden; }
+        header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(78,205,196,0.18) 0%, transparent 70%); pointer-events: none; }
+        .header-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--teal-pale); border: 1.5px solid rgba(78,205,196,0.35); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 26px; }
+        header h1 { font-family: 'Outfit', sans-serif; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
+        .header-meta { font-size: 0.9rem; color: rgba(255,255,255,0.55); font-weight: 300; letter-spacing: 0.03em; }
+        .header-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; padding: 6px 14px; background: var(--teal-pale); border: 1px solid rgba(78,205,196,0.3); border-radius: 999px; font-size: 0.78rem; font-family: 'Outfit', sans-serif; font-weight: 500; color: var(--teal); letter-spacing: 0.04em; text-transform: uppercase; }
+        .nav-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 12px 24px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(26,26,46,0.06); }
+        .nav-bar a { text-decoration: none; font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 500; padding: 7px 16px; border-radius: 999px; border: 1.5px solid var(--border); color: var(--text-muted); transition: all 0.2s; white-space: nowrap; }
+        .nav-bar a:hover, .nav-bar a.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
+        .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+        .toc { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px 32px; margin-bottom: 48px; }
+        .toc-title { font-family: 'Outfit', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 14px; }
+        .toc ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+        .toc li { counter-increment: toc-item; }
+        .toc a { text-decoration: none; color: var(--text-body); font-size: 0.88rem; display: flex; align-items: baseline; gap: 8px; transition: color 0.15s; }
+        .toc a::before { content: counter(toc-item, decimal-leading-zero); font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 600; color: var(--teal); flex-shrink: 0; }
+        .toc a:hover { color: var(--navy); }
+        @media (max-width: 520px) { .toc ol { grid-template-columns: 1fr; } }
+        .section { margin-bottom: 44px; scroll-margin-top: 80px; }
+        .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+        .section-num { width: 32px; height: 32px; border-radius: 8px; background: var(--navy); color: var(--teal); display: flex; align-items: center; justify-content: center; font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+        .section h2 { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--text-main); letter-spacing: -0.01em; }
+        .section p { margin-bottom: 14px; color: var(--text-body); }
+        .section p:last-child { margin-bottom: 0; }
+        .section h3 { font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 600; color: var(--text-main); margin: 20px 0 10px; }
+        .section ul, .section ol { padding-left: 20px; margin-bottom: 14px; }
+        .section li { margin-bottom: 6px; }
+        .section a { color: var(--teal-dark); text-decoration: none; font-weight: 600; }
+        .section a:hover { text-decoration: underline; }
+        .callout { border-radius: 12px; padding: 16px 20px; margin: 16px 0; display: flex; gap: 12px; align-items: flex-start; }
+        .callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+        .callout-body { flex: 1; font-size: 0.92rem; }
+        .callout-body strong { display: block; margin-bottom: 4px; font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 600; }
+        .callout.info    { background: var(--teal-pale2); border: 1px solid rgba(78,205,196,0.2); }
+        .callout.warning { background: rgba(255,160,0,0.07); border: 1px solid rgba(255,160,0,0.2); }
+        .callout.info    .callout-body strong { color: var(--teal-dark); }
+        .callout.warning .callout-body strong { color: #c67700; }
+        footer { background: var(--navy); color: rgba(255,255,255,0.55); padding: 40px 24px; text-align: center; }
+        footer .footer-brand { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem; color: var(--white); margin-bottom: 8px; }
+        footer p { font-size: 0.85rem; margin-bottom: 6px; }
+        footer a { color: var(--teal); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .footer-links { margin-top: 16px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: 0.83rem; }
+        .footer-copyright { margin-top: 20px; font-size: 0.78rem; opacity: 0.5; }
+        @media (max-width: 600px) { .container { padding: 32px 16px 60px; } .toc { padding: 20px; } }
+    </style>
+</head>
+<body>
+
+<div class="line-strip"></div>
+
+<header>
+    <div class="header-icon">📋</div>
+    <h1>Termeni și Condiții</h1>
+    <p class="header-meta">Metrou București — Aplicație Android</p>
+    <div class="header-badge">⚖️ Ultima actualizare: Martie 2026</div>
+</header>
+
+<nav class="nav-bar">
+    <a href="metrou-bucuresti-terms.html" class="active">Termeni și Condiții</a>
+    <a href="metrou-bucuresti-privacy.html">Politică de Confidențialitate</a>
+    <a href="metrou-bucuresti-data-usage.html">Utilizare Date</a>
+</nav>
+
+<div class="container">
+
+    <div class="toc">
+        <p class="toc-title">Cuprins</p>
+        <ol>
+            <li><a href="#s1">Acceptarea termenilor</a></li>
+            <li><a href="#s2">Descrierea serviciului</a></li>
+            <li><a href="#s3">Responsabilitățile utilizatorului</a></li>
+            <li><a href="#s4">Servicii de localizare</a></li>
+            <li><a href="#s5">Publicitate &amp; GDPR</a></li>
+            <li><a href="#s6">Excluderea garanțiilor</a></li>
+            <li><a href="#s7">Fără garanție de funcționalitate</a></li>
+            <li><a href="#s8">Responsabilitatea utilizatorului</a></li>
+            <li><a href="#s9">Limitarea răspunderii</a></li>
+            <li><a href="#s10">Servicii terțe</a></li>
+            <li><a href="#s11">Actualizări ale termenilor</a></li>
+            <li><a href="#s12">Contact</a></li>
+        </ol>
+    </div>
+
+    <section class="section" id="s1">
+        <div class="section-header">
+            <div class="section-num">01</div>
+            <h2>Acceptarea termenilor</h2>
+        </div>
+        <p>Prin descărcarea, instalarea sau utilizarea aplicației Metrou București („Aplicația"), ești de acord să fii supus acestor Termeni și Condiții. Dacă nu ești de acord, te rugăm să nu folosești Aplicația.</p>
+        <p>Aplicația este o aplicație Android neoficială, dezvoltată independent, și nu este afiliată, aprobată sau conectată la Metrorex S.A. sau orice altă autoritate oficială a metroului din București.</p>
+    </section>
+
+    <section class="section" id="s2">
+        <div class="section-header">
+            <div class="section-num">02</div>
+            <h2>Descrierea serviciului</h2>
+        </div>
+        <p>Metrou București este o aplicație Android gratuită care oferă:</p>
+        <ul>
+            <li>Planificarea rutelor de metrou pe liniile M1–M5 cu optimizarea conexiunilor</li>
+            <li>Informații despre orare pentru toate stațiile active</li>
+            <li>Urmărirea rutei prin GPS în timpul călătoriei</li>
+            <li>Detalii despre stații, inclusiv intrări, indicatori pentru direcția de deschidere a ușilor și conexiuni de transport</li>
+            <li>Locuri din apropiere și puncte de interes în jurul fiecărei stații</li>
+            <li>Note personale pentru stații și rute favorite, stocate local pe dispozitivul tău</li>
+            <li>Hartă interactivă a metroului și integrare OpenStreetMap</li>
+            <li>Suport pentru 6 limbi: română, engleză, franceză, italiană, germană, spaniolă</li>
+        </ul>
+        <div class="callout info">
+            <span class="callout-icon">ℹ️</span>
+            <div class="callout-body">
+                <strong>Doar scop informativ</strong>
+                Datele privind orarele și rutele sunt compilate din surse publice. Verifică întotdeauna informațiile critice despre călătorie prin canale oficiale.
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="s3">
+        <div class="section-header">
+            <div class="section-num">03</div>
+            <h2>Responsabilitățile utilizatorului</h2>
+        </div>
+        <p>Prin utilizarea Aplicației, ești de acord să:</p>
+        <ul>
+            <li>Folosești Aplicația numai în scopuri legale, personale</li>
+            <li>Nu încerci să efectuezi inginerie inversă, să decompilezi sau să modifici Aplicația</li>
+            <li>Nu folosești Aplicația în niciun mod care ar putea deteriora sau afecta funcționalitatea acesteia</li>
+            <li>Respecți drepturile altor utilizatori și ale terților</li>
+        </ul>
+    </section>
+
+    <section class="section" id="s4">
+        <div class="section-header">
+            <div class="section-num">04</div>
+            <h2>Servicii de localizare</h2>
+        </div>
+        <p>Aplicația poate solicita acces la locația GPS a dispozitivului tău pentru a activa urmărirea rutei și a găsi stațiile de metrou din apropiere. Permisiunile de localizare sunt opționale — funcționalitatea de bază pentru planificarea rutelor funcționează fără ele.</p>
+        <p>Datele de localizare sunt procesate exclusiv pe dispozitivul tău. Nu sunt transmise niciodată către serverele noastre. Poți revoca permisiunile de localizare oricând din Setările dispozitivului.</p>
+    </section>
+
+    <section class="section" id="s5">
+        <div class="section-header">
+            <div class="section-num">05</div>
+            <h2>Publicitate &amp; consimțământ GDPR</h2>
+        </div>
+        <p>Aplicația afișează reclame furnizate de Google AdMob. La prima lansare și ori de câte ori este impus de legea aplicabilă, Aplicația prezintă un formular de consimțământ GDPR oferit prin Platforma de mesagerie pentru utilizatori (UMP) a Google. Poți accepta sau refuza publicitatea personalizată la acel moment, iar alegerea ta este respectată pentru toate sesiunile ulterioare.</p>
+        <div class="callout warning">
+            <span class="callout-icon">⚠️</span>
+            <div class="callout-body">
+                <strong>ID publicitar</strong>
+                Dacă ești de acord cu reclame personalizate, Google AdMob poate colecta ID-ul publicitar al dispozitivului tău, informații despre dispozitiv și semnale de utilizare a aplicației. Poți reseta sau dezactiva ID-ul tău publicitar oricând prin Setări Android → Google → Reclame.
+            </div>
+        </div>
+        <p>Pentru detalii complete despre ce colectează AdMob și cum poți controla aceasta, consultă <a href="metrou-bucuresti-privacy.html">Politica de confidențialitate</a>.</p>
+    </section>
+
+    <section class="section" id="s6">
+        <div class="section-header">
+            <div class="section-num">06</div>
+            <h2>Excluderea garanțiilor</h2>
+        </div>
+        <p>Aplicația este furnizată <strong>„ca atare"</strong> și <strong>„în forma disponibilă"</strong>. În măsura maximă permisă de lege, excludem toate garanțiile, exprese sau implicite, inclusiv, dar fără a se limita la garanțiile implicite de vandabilitate, adecvare pentru un scop particular și neîncălcare a drepturilor.</p>
+    </section>
+
+    <section class="section" id="s7">
+        <div class="section-header">
+            <div class="section-num">07</div>
+            <h2>Fără garanție de funcționalitate</h2>
+        </div>
+        <p>Nu oferim nicio garanție cu privire la acuratețea, caracterul complet sau actualitatea orarelor de metrou, informațiilor despre rute sau detaliilor despre stații afișate în Aplicație. Concret, nu garantăm că:</p>
+        <ul>
+            <li>Aplicația va funcționa fără întreruperi sau erori</li>
+            <li>Datele despre orare reflectă orarele oficiale actuale</li>
+            <li>Urmărirea GPS va funcționa corect în secțiunile subterane</li>
+            <li>Aplicația va fi compatibilă cu toate dispozitivele Android sau versiunile de OS</li>
+            <li>Datele stocate în Aplicație (note, favorite) nu se vor pierde</li>
+        </ul>
+    </section>
+
+    <section class="section" id="s8">
+        <div class="section-header">
+            <div class="section-num">08</div>
+            <h2>Responsabilitatea utilizatorului &amp; asumarea riscului</h2>
+        </div>
+        <p><strong>Folosești Aplicația pe propriul risc.</strong> Este exclusiv responsabilitatea ta să verifici orarele metroului prin surse oficiale și să ai planuri alternative în cazul defecțiunii Aplicației. Aplicația este destinată ca instrument de conveniență și nu ar trebui să fie singura ta sursă pentru decizii de transport.</p>
+    </section>
+
+    <section class="section" id="s9">
+        <div class="section-header">
+            <div class="section-num">09</div>
+            <h2>Limitarea răspunderii</h2>
+        </div>
+        <p>În măsura maximă permisă de lege, dezvoltatorul și afiliații nu vor fi răspunzători pentru niciun fel de daune directe, indirecte, incidentale, punitive sau consecutive rezultate din utilizarea sau imposibilitatea de a utiliza Aplicația, inclusiv, dar fără a se limita la pierderea mijloacelor de transport, pierderea de date sau vătămări corporale.</p>
+        <p>Răspunderea noastră totală nu va depăși suma pe care ai plătit-o pentru Aplicație, care este zero.</p>
+    </section>
+
+    <section class="section" id="s10">
+        <div class="section-header">
+            <div class="section-num">10</div>
+            <h2>Servicii terțe</h2>
+        </div>
+        <p>Aplicația poate interacționa cu următoarele servicii terțe, fiecare guvernat de propriii termeni și politici de confidențialitate:</p>
+        <ul>
+            <li><strong>Google AdMob</strong> — livrarea de reclame și gestionarea consimțământului</li>
+            <li><strong>OpenStreetMap</strong> — datele de hartă afișate în vizualizarea OSM</li>
+            <li><strong>OSRM</strong> — motor de rutare open-source pentru navigarea pe hartă</li>
+            <li><strong>Aplicații de hărți</strong> (Google Maps, Waze etc.) — deschise extern la solicitarea ta</li>
+        </ul>
+        <p>Nu suntem responsabili pentru conținutul, disponibilitatea sau practicile acestor servicii terțe.</p>
+    </section>
+
+    <section class="section" id="s11">
+        <div class="section-header">
+            <div class="section-num">11</div>
+            <h2>Actualizări ale termenilor</h2>
+        </div>
+        <p>Putem actualiza acești Termeni periodic. Modificările semnificative vor fi comunicate prin notificări în aplicație sau printr-o dată „Ultima actualizare" actualizată pe această pagină. Utilizarea continuă a Aplicației după intrarea în vigoare a modificărilor constituie acceptarea Termenilor revizuiți.</p>
+    </section>
+
+    <section class="section" id="s12">
+        <div class="section-header">
+            <div class="section-num">12</div>
+            <h2>Contact</h2>
+        </div>
+        <p>Pentru întrebări despre acești Termeni, te rugăm să ne contactezi:</p>
+        <ul>
+            <li><strong>E-mail:</strong> <a href="mailto:help@metroubucuresti.ro">help@metroubucuresti.ro</a></li>
+            <li><strong>În aplicație:</strong> Setări → Despre → Contact</li>
+            <li><strong>Website:</strong> <a href="https://www.metroubucuresti.ro" target="_blank">www.metroubucuresti.ro</a></li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <p class="footer-brand">Metrou București</p>
+    <p>Aplicație neoficială de navigare în metroul din București · Android</p>
+    <div class="footer-links">
+        <a href="mailto:help@metroubucuresti.ro">help@metroubucuresti.ro</a>
+        <a href="metrou-bucuresti-privacy.html">Politică de Confidențialitate</a>
+        <a href="metrou-bucuresti-data-usage.html">Utilizare Date</a>
+    </div>
+    <p class="footer-copyright">© 2024–2026 METROU BUCURESTI. All rights reserved</p>
+</footer>
+
+</body>
+</html>
