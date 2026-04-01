@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://www.metroubucuresti.ro/sitemap.xml
+ 
+Sitemap: https://metroubucuresti.ro/sitemap.xml
