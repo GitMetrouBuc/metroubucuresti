@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="utf-8">
-  <!-- Favicon  -->
+  <!-- Favicon — ADD THESE LINES HERE -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -10,9 +10,9 @@
   <!-- End Favicon -->
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>
-   Metrou București Map M1&ndash;M5 | Free, Offline, GPS &mdash; MetrouBUC
+   Metrou București Map M1 to M5 | Free Offline GPS App · MetrouBUC
   </title>
-  <meta content="Navigate Bucharest's metro without internet &mdash; interactive M1&ndash;M5 map, optimal routes, GPS tracking and nearby places. Free on Android, works underground too." name="description">
+  <meta content="Navigate Bucharest's metro without internet. Interactive map covering all 5 Metrorex lines (M1 to M5), smart route planning, GPS tracking and nearby places. Free on Android, works underground." name="description">
   <meta content="Metrou București map, bucharest subway map, bucharest underground map, metrorex map, Metrou București app, Metrou București, M1 M2 M3 M4 M5 bucharest, metrorex bucharest, bucharest transport app, Metrou București lines" name="keywords">
   <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
   <meta content="Metrou București" name="author">
@@ -21,7 +21,7 @@
   <meta content="București, Rom&acirc;nia" name="geo.placename">
   <meta content="44.435;26.095" name="geo.position">
   <meta content="44.435, 26.095" name="ICBM">
-  <meta content="app-id=com.MetroBuc" name="google-play-app">
+  <meta content="app-id=com.MetrouBUC" name="google-play-app">
   <link href="https://metroubucuresti.ro/" rel="canonical">
   <link href="https://metroubucuresti.ro/" hreflang="en" rel="alternate">
   <link href="https://metroubucuresti.ro/ro/" hreflang="ro" rel="alternate">
@@ -31,14 +31,14 @@
   <meta content="en_GB" property="og:locale">
   <meta content="en_GB" property="og:locale:alternate">
   <meta content="https://metroubucuresti.ro/" property="og:url">
-  <meta content="Metrou București Map M1&ndash;M5 | Free, Offline, GPS" property="og:title">
-  <meta content="Navigate Bucharest's metro without internet &mdash; interactive M1&ndash;M5 map, optimal routes, GPS tracking and nearby places. Free on Android, works underground too." property="og:description">
+  <meta content="Metrou București Map M1 to M5 | Free Offline GPS App" property="og:title">
+  <meta content="Navigate Bucharest's metro without internet. Interactive map covering all 5 Metrorex lines (M1 to M5), smart route planning, GPS tracking and nearby places. Free on Android, works underground." property="og:description">
   <meta content="https://metroubucuresti.ro/images/splash-screen.png" property="og:image">
   <meta content="1080" property="og:image:width">
   <meta content="1920" property="og:image:height">
-  <meta content="Metrou București Map &mdash; Android App M1&ndash;M5" property="og:image:alt">
+  <meta content="MetrouBUC Android App · Bucharest Metro Map M1 to M5" property="og:image:alt">
   <meta content="summary_large_image" name="twitter:card">
-  <meta content="Metrou București Map &mdash; M1, M2, M3, M4, M5" name="twitter:title">
+  <meta content="Metrou București Map · Lines M1, M2, M3, M4, M5" name="twitter:title">
   <meta content="Free interactive Metrou București map. All 5 Metrorex lines, station search, GPS tracking. 100% offline Android app." name="twitter:description">
   <meta content="https://metroubucuresti.ro/images/splash-screen.png" name="twitter:image">
   <meta content="Metrou București Map" name="twitter:image:alt">
@@ -63,7 +63,7 @@
       "price": "0",
       "priceCurrency": "USD"
     },
-    "installUrl": "https://play.google.com/store/apps/details?id=com.MetroBuc",
+    "installUrl": "https://play.google.com/store/apps/details?id=com.MetrouBUC",
     "screenshot": "https://metroubucuresti.ro/images/splash-screen.png",
     "inLanguage": "en",
     "publisher": {
@@ -243,7 +243,6 @@ body{font-family:var(--sans);color:rgba(255,255,255,0.72);overflow-x:hidden;line
 .btn-line:hover{border-color:rgba(78,205,196,.5);color:var(--white)}
 .hero-stats{display:flex;gap:28px;flex-wrap:wrap}
 .hstat{display:flex;align-items:center;gap:10px}
-.hstat-icon{width:34px;height:34px;border-radius:8px;background:var(--mist);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
 .hstat-text{font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.25}
 .hstat-text strong{display:block;color:var(--white);font-weight:600;font-size:.88rem}
 .hero-right{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;padding-right:clamp(24px,calc((100vw - 1280px)/2 + 40px),200px);}
@@ -282,7 +281,10 @@ body{font-family:var(--sans);color:rgba(255,255,255,0.72);overflow-x:hidden;line
 .feat-item:hover{background:rgba(255,255,255,.07)}
 .feat-item.active{background:rgba(78,205,196,.06);}
 .feat-item-header{display:flex;align-items:center;gap:10px;padding:20px 22px;}
-.feat-emoji{font-size:1.25rem;flex-shrink:0;line-height:1}
+.feat-emoji{width:28px;height:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(78,205,196,.08);border:1px solid rgba(78,205,196,.18);border-radius:8px;color:var(--teal);}
+.feat-emoji svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.hstat-icon{width:34px;height:34px;border-radius:8px;background:var(--mist);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--teal);}
+.hstat-icon svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
 .feat-name{font-family:var(--sans);font-size:.88rem;font-weight:600;color:var(--white);line-height:1.3;flex:1;margin:0;}
 .feat-chevron{width:16px;height:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);transition:transform .32s cubic-bezier(.4,0,.2,1),color .25s;}
 .feat-chevron svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -585,8 +587,8 @@ body.lb-open {
      </li>
     </ul>
     <div class="nav-end">
-     <a class="nav-dl" href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank">
-      Free &mdash; Download the App
+     <a class="nav-dl" href="https://play.google.com/store/apps/details?id=com.MetrouBUC" rel="noopener" target="_blank">
+      Get the Free App
      </a>
      <button aria-label="Menu" class="hamburger" id="hbg">
       <span>
@@ -660,8 +662,8 @@ body.lb-open {
     </span>
     Data Usage
    </a>
-   <a class="mobile-menu-dl" href="https://play.google.com/store/apps/details?id=com.MetroBuc" target="_blank">
-    ▶&nbsp; Download on Google Play &mdash; FREE
+   <a class="mobile-menu-dl" href="https://play.google.com/store/apps/details?id=com.MetrouBUC" target="_blank">
+    ▶&nbsp; Download on Google Play · FREE
    </a>
   </div>
   <section aria-labelledby="hero-heading" class="hero" id="top">
@@ -677,19 +679,19 @@ body.lb-open {
      </span>
      <br>
      <em>
-      Bucharest undeground
+      Bucharest's metro
      </em>
      <br>
      <span>
-      with Ease
+      with confidence
      </span>
     </h1>
     <p class="hero-desc rv rv2">
-     Smart route planning across all 5 lines, GPS journey tracking, door-side indicators, lift & wheelchair accessibility info, interactive map and nearby places &mdash; all stored on your device.
+     Smart route planning across all 5 lines, GPS journey tracking, door-side indicators, accessibility info, an interactive map and nearby places. Everything stored on your device, ready when you need it.
     </p>
     <div class="hero-btns rv rv3">
      <div>
-      <a class="btn-fill" href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank">
+      <a class="btn-fill" href="https://play.google.com/store/apps/details?id=com.MetrouBUC" rel="noopener" target="_blank">
        <span>
         ▶
        </span>
@@ -713,53 +715,40 @@ body.lb-open {
     <div class="hero-stats rv rv4">
      <div class="hstat">
       <div class="hstat-icon">
-       ✈️
+       <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
       <div class="hstat-text">
        <strong>
-        Airport connections
+        63 Stations
        </strong>
        <span>
-        Quickly find stations with direct airport links
+        All 5 Metrorex lines covered
        </span>
       </div>
      </div>
      <div class="hstat">
       <div class="hstat-icon">
-       📍
+       <svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
       </div>
       <div class="hstat-text">
        <strong>
-        Nearby Places
+        Works Offline
        </strong>
        <span>
-        Restaurants, attractions & more
+        No signal needed underground
        </span>
       </div>
      </div>
      <div class="hstat">
       <div class="hstat-icon">
-       📴
+       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       </div>
       <div class="hstat-text">
        <strong>
-        100% Offline
+        30-second install
        </strong>
        <span>
-        No data, always works
-       </span>
-      </div>
-     </div>
-     <div class="hstat">
-      <div class="hstat-icon">
-       ♿️
-      </div>
-      <div class="hstat-text">
-       <strong>
-        Lifts & Accessibility
-       </strong>
-       <span>
-        Check lift availability at stations
+        No account required
        </span>
       </div>
      </div>
@@ -810,27 +799,27 @@ body.lb-open {
    <div class="lpill lp1">
     <div class="lpill-dot" style="background:var(--m1)">
     </div>
-    M1 &mdash; Dristor&ndash;Pantelimon
+    M1 · Dristor&ndash;Pantelimon
    </div>
    <div class="lpill lp2">
     <div class="lpill-dot" style="background:var(--m2)">
     </div>
-    M2 &mdash; Tudor Arghezi&ndash;Pipera
+    M2 · Tudor Arghezi&ndash;Pipera
    </div>
    <div class="lpill lp3">
     <div class="lpill-dot" style="background:var(--m3)">
     </div>
-    M3 &mdash; Preciziei&ndash;Anghel Saligny
+    M3 · Preciziei&ndash;Anghel Saligny
    </div>
    <div class="lpill lp4">
     <div class="lpill-dot" style="background:var(--m4)">
     </div>
-    M4 &mdash; Gara de Nord&ndash;Straulesti
+    M4 · Gara de Nord&ndash;Straulesti
    </div>
    <div class="lpill lp5">
     <div class="lpill-dot" style="background:var(--m5)">
     </div>
-    M5 &mdash; Eroilor&ndash;Valea Cascadelor / R&acirc;ul Doamnei
+    M5 · Eroilor&ndash;Valea Cascadelor / R&acirc;ul Doamnei
    </div>
   </div>
   <section aria-labelledby="features-heading" class="features" id="features">
@@ -848,18 +837,18 @@ body.lb-open {
      <strong>
       MetrouBUC
      </strong>
-     helps you get off stress-free, knowing in advance which side the doors open on when you arrive &mdash; from
+     helps you get off stress-free, knowing in advance which side the doors open on when you arrive. From
      <em>
       real-time GPS tracking
      </em>
-     to platform indicators, so you always board at the right spot.
+     to platform indicators, you always board at the right spot.
     </p>
    </div>
    <div class="feat-grid" id="feat-grid">
     <div class="feat-item" onclick="toggleFeat(this)">
      <div class="feat-item-header">
       <span class="feat-emoji">
-       🗺
+       <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
       </span>
       <h3 class="feat-name">
        Interactive Metro Map
@@ -873,14 +862,14 @@ body.lb-open {
      </div>
      <div class="feat-body">
       <p class="feat-copy">
-       Full zoomable map of all 5 Metrorex lines. Tap any station to see connections, exits and nearby points of interest &mdash; all offline.
+       A full zoomable map of all 5 Metrorex lines. Tap any station to see connections, exits and nearby points of interest. Works entirely offline.
       </p>
      </div>
     </div>
     <div class="feat-item" onclick="toggleFeat(this)">
      <div class="feat-item-header">
       <span class="feat-emoji">
-       🔀
+       <svg viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M8.59 13.51l6.83-7.02"/></svg>
       </span>
       <h3 class="feat-name">
        Smart Route Planner
@@ -894,14 +883,14 @@ body.lb-open {
      </div>
      <div class="feat-body">
       <p class="feat-copy">
-       Pick any two stations and instantly get the fastest route &mdash; including transfer points and estimated travel time. Works 100% offline.
+       Pick any two stations and instantly get the fastest route, including transfer points and estimated travel time. No internet needed.
       </p>
      </div>
     </div>
     <div class="feat-item" onclick="toggleFeat(this)">
      <div class="feat-item-header">
       <span class="feat-emoji">
-       📍
+       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
       </span>
       <h3 class="feat-name">
        Real-Time GPS Tracking
@@ -915,14 +904,14 @@ body.lb-open {
      </div>
      <div class="feat-body">
       <p class="feat-copy">
-       Follow your journey in real time on the map. The app tracks your underground position and alerts you before reaching your station.
+       Follow your journey in real time on the map. The app tracks your underground position and alerts you before you reach your station.
       </p>
      </div>
     </div>
     <div class="feat-item" onclick="toggleFeat(this)">
      <div class="feat-item-header">
       <span class="feat-emoji">
-       &rlarr;
+       <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/><path d="M10 8h4" opacity=".5"/><path d="M10 16h4" opacity=".5"/></svg>
       </span>
       <h3 class="feat-name">
        Door-Side Indicators
@@ -936,17 +925,17 @@ body.lb-open {
      </div>
      <div class="feat-body">
       <p class="feat-copy">
-       Know exactly which side of the train to board for the fastest exit. Unique to MetrouBUC &mdash; save precious seconds at every transfer.
+       Know exactly which side of the train to board for the fastest exit. A feature unique to MetrouBUC that saves you precious seconds at every transfer.
       </p>
      </div>
     </div>
     <div class="feat-item" onclick="toggleFeat(this)">
      <div class="feat-item-header">
       <span class="feat-emoji">
-       ♿
+       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/><path d="M9 2h6" opacity=".5"/></svg>
       </span>
       <h3 class="feat-name">
-       Accessibility Information
+       Accessibility Info
       </h3>
       <span class="feat-chevron">
        <svg viewbox="0 0 12 12">
@@ -964,10 +953,10 @@ body.lb-open {
     <div class="feat-item" onclick="toggleFeat(this)">
      <div class="feat-item-header">
       <span class="feat-emoji">
-       ✈️
+       <svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1L11 12l-2 3H6l-1 1 3 2 2 3 1-1v-3l3-2 3.5 7.3c.3.4.7.5 1.1.3l.5-.3c.4-.2.5-.7.4-1.1z"/></svg>
       </span>
       <h3 class="feat-name">
-       Airport & accessibility
+       Airport Connections
       </h3>
       <span class="feat-chevron">
        <svg viewbox="0 0 12 12">
@@ -978,14 +967,14 @@ body.lb-open {
      </div>
      <div class="feat-body">
       <p class="feat-copy">
-       Find exactly which metro stations have a direct connection to both airports &mdash; by bus or train &mdash; plus lift and wheelchair access info at each station.
+       See which metro stations connect to both airports by bus or train, plus lift and wheelchair access info at each station.
       </p>
      </div>
     </div>
     <div class="feat-item" onclick="toggleFeat(this)">
      <div class="feat-item-header">
       <span class="feat-emoji">
-       📴
+       <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V4h14v16"/><path d="M9 8h2"/><path d="M13 8h2"/><path d="M9 12h2"/><path d="M13 12h2"/><path d="M10 20v-4h4v4"/></svg>
       </span>
       <h3 class="feat-name">
        100% Offline
@@ -999,14 +988,14 @@ body.lb-open {
      </div>
      <div class="feat-body">
       <p class="feat-copy">
-       No internet needed &mdash; ever. All maps, schedules, routes and station data are stored on your device. Perfect for underground use.
+       No internet needed, ever. All maps, schedules, routes and station data live on your device. Perfect for underground use where there's no signal.
       </p>
      </div>
     </div>
     <div class="feat-item" onclick="toggleFeat(this)">
      <div class="feat-item-header">
       <span class="feat-emoji">
-       🕐
+       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       </span>
       <h3 class="feat-name">
        Offline Schedules
@@ -1020,14 +1009,14 @@ body.lb-open {
      </div>
      <div class="feat-body">
       <p class="feat-copy">
-       Full Metrorex departure schedules for all stations, on weekdays and weekends &mdash; available without any connection.
+       Full Metrorex departure schedules for all stations, on weekdays and weekends, available without any connection.
       </p>
      </div>
     </div>
     <div class="feat-item" onclick="toggleFeat(this)">
      <div class="feat-item-header">
       <span class="feat-emoji">
-       📍
+       <svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
       </span>
       <h3 class="feat-name">
        Nearby Places
@@ -1041,7 +1030,7 @@ body.lb-open {
      </div>
      <div class="feat-body">
       <p class="feat-copy">
-       Discover restaurants, attractions, pharmacies and more near any metro station &mdash; all without leaving the app.
+       Discover restaurants, attractions, pharmacies and more near any metro station, all without leaving the app.
       </p>
      </div>
     </div>
@@ -1075,11 +1064,11 @@ body.lb-open {
       Journey progress bar visible at a glance
      </li>
     </ul>
-    <a class="btn-fill" href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" style="align-self:flex-start" target="_blank">
+    <a class="btn-fill" href="https://play.google.com/store/apps/details?id=com.MetrouBUC" rel="noopener" style="align-self:flex-start" target="_blank">
      <span>
       ▶
      </span>
-     Download the App &mdash; Free
+     Download the App · Free
     </a>
    </div>
    <div class="shots-right">
@@ -1163,7 +1152,7 @@ body.lb-open {
       </span>
       Open Full Map
      </a>
-     <a class="btn-line" href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank">
+     <a class="btn-line" href="https://play.google.com/store/apps/details?id=com.MetrouBUC" rel="noopener" target="_blank">
       Download the App
      </a>
     </div>
@@ -1172,34 +1161,34 @@ body.lb-open {
     <span class="mlbadge mlb1">
      <span class="mlbadge-dot" style="background:#e07070">
      </span>
-     M1 &mdash; 22 stations
+     M1 · 22 stations
     </span>
     <span class="mlbadge mlb2">
      <span class="mlbadge-dot" style="background:#6699ee">
      </span>
-     M2 &mdash; 15 stations
+     M2 · 15 stations
     </span>
     <span class="mlbadge mlb3">
      <span class="mlbadge-dot" style="background:#eedd44">
      </span>
-     M3 &mdash; 15 stations
+     M3 · 15 stations
     </span>
     <span class="mlbadge mlb4">
      <span class="mlbadge-dot" style="background:#55cc88">
      </span>
-     M4 &mdash; 8 stations
+     M4 · 8 stations
     </span>
     <span class="mlbadge mlb5">
      <span class="mlbadge-dot" style="background:#ffbb66">
      </span>
-     M5 &mdash; 10 stations
+     M5 · 10 stations
     </span>
     <span class="mlbadge" style="background:rgba(78,205,196,.10);color:var(--teal);border:1px solid rgba(78,205,196,.25)">
      approx. 80 km total
     </span>
    </div>
    <a aria-label="View the interactive Metrou București map" class="map-svg-wrap" href="map.html">
-    <img alt="Interactive Metrou București map &mdash; all 5 Metrorex lines M1&ndash;M5" class="map-preview-img" height="500" loading="lazy" src="https://metroubucuresti.ro/images/metro-map-preview.png" width="1280">
+    <img alt="Interactive Metrou București map showing all 5 Metrorex lines M1 to M5" class="map-preview-img" height="500" loading="lazy" src="https://metroubucuresti.ro/images/metro-map-preview.png" width="1280">
     <div class="map-img-fade">
     </div>
     <div class="map-svg-hover">
@@ -1219,9 +1208,9 @@ body.lb-open {
     New
    </span>
    <span class="beta-banner-text">
-    MetrouBUC keeps evolving &mdash;
+    MetrouBUC keeps evolving.
     <a href="/cdn-cgi/l/email-protection#abc3cec7dbebc6cedfd9c4dec9dec8ded9ced8dfc285d9c4">
-     send feedback
+     Send us feedback
     </a>
     and help shape the next version.
    </span>
@@ -1233,7 +1222,7 @@ body.lb-open {
       Free Android App
      </p>
      <h2 id="beta-heading">
-      Whether you're a student, expat, tourist or daily commuter &mdash; locals choose
+      Whether you're a student, expat, tourist or daily commuter, locals choose
       <em>
        MetrouBUC
       </em>
@@ -1242,11 +1231,11 @@ body.lb-open {
      <p>
       Download MetrouBUC and explore all 5 lines with
       <strong>
-       full offline support
+       full offline support.
       </strong>
-      &mdash; no account, no mobile data.
+      No account, no mobile data needed.
      </p>
-     <a class="beta-join-btn" href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank">
+     <a class="beta-join-btn" href="https://play.google.com/store/apps/details?id=com.MetrouBUC" rel="noopener" target="_blank">
       ▶ &nbsp;Download on Google Play
      </a>
     </div>
@@ -1259,7 +1248,7 @@ body.lb-open {
        </em>
       </div>
       <div class="beta-stat-label">
-       M1, M2, M3, M4, M5 &mdash; the complete Metrorex network
+       M1, M2, M3, M4, M5 · the complete Metrorex network
       </div>
      </div>
      <div class="beta-stat">
@@ -1286,7 +1275,7 @@ body.lb-open {
      </div>
      <ul class="beta-perks">
       <li>
-       Works fully offline &mdash; including underground
+       Works fully offline, even underground
       </li>
       <li>
        GPS journey tracking with station alerts
@@ -1344,7 +1333,7 @@ body.lb-open {
       Does the app work without internet?
      </p>
      <p class="faq-a">
-      Yes &mdash; 100% offline. Route planning, schedules, GPS tracking, accessibility info and station details all work underground without mobile data.
+      Yes, 100% offline. Route planning, schedules, GPS tracking, accessibility info and station details all work underground without mobile data.
      </p>
     </div>
     <div class="faq-item">
@@ -1368,7 +1357,7 @@ body.lb-open {
       What are the Metrou București operating hours?
      </p>
      <p class="faq-a">
-      Metrou București runs daily from approximately 05:00 to 23:00. Exact departure times for every station are available offline in the MetrouBUC app &mdash; including underground, without signal.
+      Metrou București runs daily from approximately 05:00 to 23:00. Exact departure times for every station are available offline in the MetrouBUC app, including underground without signal.
      </p>
     </div>
     <div class="faq-item">
@@ -1376,7 +1365,7 @@ body.lb-open {
       Which metro app works without internet in Bucharest?
      </p>
      <p class="faq-a">
-      MetrouBUC works 100% offline &mdash; map, routes, schedules, GPS tracking and accessibility info are all stored on your phone. No signal or mobile data needed.
+      MetrouBUC works 100% offline. Map, routes, schedules, GPS tracking and accessibility info are all stored on your phone. No signal or mobile data needed.
      </p>
     </div>
     <div class="faq-item">
@@ -1384,7 +1373,7 @@ body.lb-open {
       How do I travel between major stations in Bucharest by metro?
      </p>
      <p class="faq-a">
-      Use the MetrouBUC route planner: select your departure and destination station, and the app shows the fastest route with all required transfers and estimated time &mdash; all offline.
+      Use the MetrouBUC route planner: select your departure and destination station, and the app shows the fastest route with all required transfers and estimated time. Works completely offline.
      </p>
     </div>
     <div class="faq-item">
@@ -1407,15 +1396,15 @@ body.lb-open {
       </em>
      </h2>
      <p>
-      Free, offline, no account needed. Works on any Android device &mdash; even underground.
+      Free, offline, no account needed. Works on any Android device, even underground.
      </p>
     </div>
     <div class="cta-actions">
-     <a class="btn-fill" href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank">
+     <a class="btn-fill" href="https://play.google.com/store/apps/details?id=com.MetrouBUC" rel="noopener" target="_blank">
       ▶ &nbsp;Download Free on Google Play
      </a>
      <a class="btn-line" href="map.html">
-      🗺 &nbsp;Vezi Harta Metroului
+      🗺 &nbsp;Explore the Metro Map
      </a>
     </div>
    </div>
@@ -1627,14 +1616,14 @@ body.lb-open {
       MetrouBUC
      </div>
      <p class="foot-desc">
-      Free Android app for navigating Bucharest's metro &mdash; all 5 Metrorex lines, offline, with accessibility info and nearby places.
+      Free Android app for navigating Bucharest's metro. All 5 Metrorex lines, offline, with accessibility info and nearby places.
      </p>
     </div>
     <div class="foot-col">
      <h4>
       App
      </h4>
-     <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank">
+     <a href="https://play.google.com/store/apps/details?id=com.MetrouBUC" rel="noopener" target="_blank">
       Google Play
      </a>
      <a href="#features">
@@ -1679,7 +1668,7 @@ body.lb-open {
    <div class="foot-bottom">
     <div class="foot-legal">
      <span>
-      &copy; 2025 Metrou București &mdash; MetrouBUC. Independent app, unaffiliated with Metrorex S.A.
+      &copy; 2025 Metrou București · MetrouBUC. Independent app, unaffiliated with Metrorex S.A.
      </span>
      <span>
       Built with care for Bucharest commuters and travellers.
