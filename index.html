@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MetrouBUC — Navigate Bucharest Underground</title>
+<title>Metrou București (MetrouBUC) — Hartă metrou, trasee offline și navigare în București</title>
+<meta name="description" content="Metrou București (MetrouBUC) este aplicația Android gratuită pentru navigarea prin metroul din București: hartă metrou, planificare traseu, program offline, GPS, accesibilitate și conexiuni către aeroport.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Metrou București">
+<meta name="theme-color" content="#06070F">
+<link rel="canonical" href="https://metroubucuresti.ro/">
+<link rel="alternate" hreflang="ro" href="https://metroubucuresti.ro/">
+<link rel="alternate" hreflang="en" href="https://metroubucuresti.ro/en/">
+<link rel="alternate" hreflang="x-default" href="https://metroubucuresti.ro/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:site_name" content="Metrou București">
+<meta property="og:title" content="Metrou București (MetrouBUC) — Hartă metrou, trasee offline și navigare în București">
+<meta property="og:description" content="Aplicație Android gratuită pentru metroul din București: toate magistralele Metrorex, planificare traseu, urmărire GPS, program offline, accesibilitate și hartă metrou.">
+<meta property="og:url" content="https://metroubucuresti.ro/">
+<meta property="og:image" content="https://metroubucuresti.ro/images/splash-screen.png">
+<meta property="og:image:alt" content="Previzualizare aplicație Metrou București pe telefon">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Metrou București (MetrouBUC) — Hartă metrou, trasee offline și navigare în București">
+<meta name="twitter:description" content="Navighează mai ușor prin metroul din București cu trasee offline, hartă interactivă, program, GPS și informații de accesibilitate.">
+<meta name="twitter:image" content="https://metroubucuresti.ro/images/splash-screen.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -11,6 +31,72 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"MobileApplication",
+  "name":"Metrou București",
+  "alternateName":"MetrouBUC",
+  "applicationCategory":"TravelApplication",
+  "operatingSystem":"Android",
+  "inLanguage":"ro",
+  "isAccessibleForFree":true,
+  "downloadUrl":"https://play.google.com/store/apps/details?id=com.MetroBuc",
+  "url":"https://metroubucuresti.ro/",
+  "image":"https://metroubucuresti.ro/images/splash-screen.png",
+  "description":"Aplicație Android gratuită pentru navigarea prin metroul din București, cu planificare traseu, hartă, program offline, urmărire GPS și informații de accesibilitate.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"RON"
+  },
+  "publisher":{
+    "@type":"Organization",
+    "name":"Metrou București"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "inLanguage":"ro",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Unde găsesc harta Metrou București?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Aplicația oferă acces direct la trasee, detalii despre stații, sosiri, locuri din apropiere și conexiuni către aeroport. Poți consulta și harta web la metroubucuresti.ro/map.html."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Câte magistrale de metrou are Bucureștiul?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Bucureștiul are 5 magistrale active de metrou: M1, M2, M3, M4 și M5, care acoperă aproximativ 63 de stații."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Aplicația este gratuită?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Da, aplicația este gratuită pe Android, fără cont necesar și cu funcții disponibile offline."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Funcționează fără internet?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Da. Planificarea traseelor, programul, urmărirea GPS, informațiile de accesibilitate și detaliile stațiilor funcționează offline."
+      }
+    }
+  ]
+}
+</script>
 <style>
 :root{
   --bg:#06070F;--bg2:#0C0E1D;--bg3:#111428;
@@ -45,6 +131,10 @@ nav.solid{background:rgba(6,7,15,.93);backdrop-filter:blur(24px);border-bottom:1
 .nav-links{display:flex;list-style:none;gap:34px}
 .nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);transition:color .2s}
 .nav-links a:hover{color:var(--teal)}
+.lang-switch{display:inline-flex;align-items:center;gap:6px;padding:5px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);backdrop-filter:blur(10px)}
+.lang-link{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:32px;padding:0 12px;border-radius:999px;font-family:var(--sans);font-size:.75rem;font-weight:700;letter-spacing:.04em;color:var(--dim);transition:background .2s,color .2s,border-color .2s}
+.lang-link:hover{color:var(--white);background:rgba(78,205,196,.08)}
+.lang-link.active{background:rgba(78,205,196,.15);color:var(--teal);border:1px solid rgba(78,205,196,.2)}
 .nav-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--bg);font-family:var(--sans);font-size:.82rem;font-weight:700;padding:10px 22px;border-radius:10px;box-shadow:0 4px 20px rgba(78,205,196,.35);transition:box-shadow .2s,transform .2s;position:relative;overflow:hidden}
 .nav-cta::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shim 3s infinite}
 .nav-cta:hover{box-shadow:0 8px 32px rgba(78,205,196,.55);transform:translateY(-1px)}
@@ -58,6 +148,9 @@ nav.solid{background:rgba(6,7,15,.93);backdrop-filter:blur(24px);border-bottom:1
 .mob.open{display:flex}
 .mob a{font-family:var(--sans);font-size:1.6rem;font-weight:700;color:var(--text);transition:color .2s}
 .mob a:hover,.mob a.dl{color:var(--teal)}
+.mob-lang{display:flex;gap:10px;margin-top:8px}
+.mob-lang a{font-size:1rem;padding:10px 18px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03)}
+.mob-lang a.active{border-color:rgba(78,205,196,.35);color:var(--teal);background:rgba(78,205,196,.08)}
 
 /* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
@@ -170,7 +263,6 @@ nav{z-index:900}
 .lc3{background:rgba(229,57,53,.07)}.lc3 .lcard-num{color:var(--m3)}.lc3 .lcard-bar{background:var(--m3)}
 .lc4{background:rgba(67,160,71,.07)}.lc4 .lcard-num{color:var(--m4)}.lc4 .lcard-bar{background:var(--m4)}
 .lc5{background:rgba(251,140,0,.07)}.lc5 .lcard-num{color:var(--m5)}.lc5 .lcard-bar{background:var(--m5)}
-
 /* MAP SECTION */
 .map-sec{padding:100px clamp(24px,calc((100vw - 1300px)/2 + 40px),200px);background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);position:relative;overflow:hidden}
 .map-sec::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(78,205,196,.06) 0%,transparent 70%)}
@@ -332,6 +424,7 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
 }
 @media(max-width:700px){
   .nav-links{display:none!important}.hbg{display:flex}
+  .lang-switch{display:none}
   .nav-cta{font-size:.75rem;padding:8px 14px}
   .nav-inner{padding:16px 24px}
   .feat-grid{grid-template-columns:1fr}
@@ -361,33 +454,41 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-logo">
+    <a href="#top" class="nav-logo" aria-label="Metrou București - Înapoi sus">
       <div class="logo-mark"></div>
       Metrou București
     </a>
     <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#map">Map</a></li>
-      <li><a href="#screenshots">Screenshots</a></li>
-      <li><a href="#lines">Lines</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#features">Funcții</a></li>
+      <li><a href="#map">Hartă</a></li>
+      <li><a href="#screenshots">Capturi</a></li>
+      <li><a href="#lines">Magistrale</a></li>
+      <li><a href="#faq">Întrebări</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:10px">
-      <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank" class="nav-cta">
+      <div class="lang-switch" aria-label="Selector limbă">
+        <a href="https://metroubucuresti.ro/" class="lang-link active" lang="ro" hreflang="ro" aria-current="page">RO</a>
+        <a href="https://metroubucuresti.ro/en/" class="lang-link" lang="en" hreflang="en">EN</a>
+      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank" class="nav-cta" aria-label="Descarcă gratuit aplicația Metrou București din Google Play">
         <svg viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.27.07 2.15.59 2.9.6.9-.15 1.95-.66 3.14-.56 1.32.09 2.5.59 3.22 1.58-2.86 1.74-2.27 5.56.29 6.66-.5 1.4-1.17 2.76-1.55 4.6M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-        Download Free
+        Descarcă gratuit
       </a>
-      <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="hbg" id="hbg" aria-label="Meniu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
 <div class="mob" id="mob">
-  <a href="#features" onclick="closeMob()">Features</a>
-  <a href="#screenshots" onclick="closeMob()">Screenshots</a>
-  <a href="#lines" onclick="closeMob()">Lines</a>
-  <a href="#faq" onclick="closeMob()">FAQ</a>
-  <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" class="dl" rel="noopener" target="_blank">Download Free →</a>
+  <a href="#features" onclick="closeMob()">Funcții</a>
+  <a href="#screenshots" onclick="closeMob()">Capturi</a>
+  <a href="#lines" onclick="closeMob()">Magistrale</a>
+  <a href="#faq" onclick="closeMob()">Întrebări</a>
+  <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" class="dl" rel="noopener" target="_blank">Descarcă gratuit →</a>
+  <div class="mob-lang" aria-label="Selector limbă mobil">
+    <a href="https://metroubucuresti.ro/" class="active" lang="ro" hreflang="ro" aria-current="page">Română</a>
+    <a href="https://metroubucuresti.ro/en/" lang="en" hreflang="en">English</a>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -395,26 +496,26 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
   <canvas id="canvas"></canvas>
   <div class="hero-grad"></div>
   <div class="hero-l">
-    <div class="badge rv"><div class="badge-dot"></div>Free Android App · 100% Offline</div>
+    <div class="badge rv"><div class="badge-dot"></div>Aplicație Android gratuită · 100% Offline</div>
     <h1 class="rv" data-d="1">
-      <span>Navigate</span><br>
-      <span class="grad-text">Bucharest's metro</span><br>
-      <span>with confidence</span>
+      <span>Navighează</span><br>
+      <span class="grad-text">metroul din București</span><br>
+      <span>cu încredere</span>
     </h1>
-    <p class="hero-sub rv" data-d="2">Smart route planning across <strong>all 5 Metrorex lines</strong>, real-time GPS tracking, door-side indicators and offline schedules. Everything stored on your device.</p>
+    <p class="hero-sub rv" data-d="2">Planificare inteligentă a traseului pe <strong>toate cele 5 magistrale Metrorex</strong>, urmărire GPS în timp real, indicatoare pentru partea ușilor și program offline. Totul este stocat pe dispozitivul tău.</p>
     <div class="hero-btns rv" data-d="3">
-      <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank" class="btn-p">
+      <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank" class="btn-p" aria-label="Descarcă aplicația Metrou București din Google Play">
         <svg viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.27.07 2.15.59 2.9.6.9-.15 1.95-.66 3.14-.56 1.32.09 2.5.59 3.22 1.58-2.86 1.74-2.27 5.56.29 6.66-.5 1.4-1.17 2.76-1.55 4.6M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-        Download on Google Play
+        Descarcă din Google Play
       </a>
-      <a href="#features" class="btn-s">Explore Features →</a>
+      <a href="#features" class="btn-s">Vezi funcțiile →</a>
     </div>
     <div class="hero-stats rv" data-d="4">
-      <div class="hstat"><div class="hnum"><span class="cnt" data-t="63">0</span><em>+</em></div><div class="hlabel">Stations covered</div></div>
+      <div class="hstat"><div class="hnum"><span class="cnt" data-t="63">0</span><em>+</em></div><div class="hlabel">Stații acoperite</div></div>
       <div class="hdiv"></div>
-      <div class="hstat"><div class="hnum"><span class="cnt" data-t="5">0</span> <em>Lines</em></div><div class="hlabel">Full Metrorex network</div></div>
+      <div class="hstat"><div class="hnum"><span class="cnt" data-t="5">0</span> <em>Magistrale</em></div><div class="hlabel">Întreaga rețea Metrorex</div></div>
       <div class="hdiv"></div>
-      <div class="hstat"><div class="hnum"><em>100%</em></div><div class="hlabel">Free, no account</div></div>
+      <div class="hstat"><div class="hnum"><em>100%</em></div><div class="hlabel">Gratuit, fără cont</div></div>
     </div>
   </div>
   <div class="hero-r">
@@ -422,13 +523,13 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
       <div class="phone-frame">
         <video playsinline autoplay muted loop poster="https://metroubucuresti.ro/images/splash-screen.png">
           <source src="https://metroubucuresti.ro/images/video.mp4" type="video/mp4">
-          <img src="https://metroubucuresti.ro/images/splash-screen.png" alt="MetrouBUC App">
+          <img src="https://metroubucuresti.ro/images/splash-screen.png" alt="Aplicația MetrouBUC afișată pe telefon">
         </video>
       </div>
-      <div class="mbadge mb1"><div class="mbdot" style="background:var(--m1)"></div>M1 · Gold</div>
+      <div class="mbadge mb1"><div class="mbdot" style="background:var(--m1)"></div>M1 · Galben</div>
       <div class="mbadge mb2"><div class="mbdot" style="background:var(--m2)"></div>M2 · Pipera</div>
       <div class="mbadge mb3"><div class="mbdot" style="background:var(--m3)"></div>M3 · Saligny</div>
-      <div class="mbadge mb4"><div class="mbdot" style="background:var(--m4)"></div>M4 · Straulesti</div>
+      <div class="mbadge mb4"><div class="mbdot" style="background:var(--m4)"></div>M4 · Străulești</div>
       <div class="mbadge mb5"><div class="mbdot" style="background:var(--m5)"></div>M5 · Eroilor</div>
     </div>
   </div>
@@ -438,64 +539,64 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
 
 <!-- STATS -->
 <div class="stats" id="stats-bar">
-  <div class="stat rv"><div class="stat-big"><span class="cnt" data-t="63">0</span><em>+</em></div><div class="stat-label">Stations</div><div class="stat-note">Every exit &amp; connection</div></div>
-  <div class="stat rv" data-d="1"><div class="stat-big"><span class="cnt" data-t="5">0</span> <em>Lines</em></div><div class="stat-label">M1 through M5</div><div class="stat-note">Complete Metrorex network</div></div>
-  <div class="stat rv" data-d="2"><div class="stat-big"><em>100%</em></div><div class="stat-label">Offline</div><div class="stat-note">Works underground, no signal</div></div>
-  <div class="stat rv" data-d="3"><div class="stat-big"><em>Free</em></div><div class="stat-label">Always</div><div class="stat-note">No subscription, no account</div></div>
+  <div class="stat rv"><div class="stat-big"><span class="cnt" data-t="63">0</span><em>+</em></div><div class="stat-label">Stații</div><div class="stat-note">Fiecare ieșire și conexiune</div></div>
+  <div class="stat rv" data-d="1"><div class="stat-big"><span class="cnt" data-t="5">0</span> <em>Magistrale</em></div><div class="stat-label">De la M1 la M5</div><div class="stat-note">Rețea Metrorex completă</div></div>
+  <div class="stat rv" data-d="2"><div class="stat-big"><em>100%</em></div><div class="stat-label">Offline</div><div class="stat-note">Funcționează în subteran, fără semnal</div></div>
+  <div class="stat rv" data-d="3"><div class="stat-big"><em>Gratuit</em></div><div class="stat-label">Mereu</div><div class="stat-note">Fără abonament, fără cont</div></div>
 </div>
 
 <!-- FEATURES -->
 <section class="features" id="features">
   <div class="feat-hdr">
-    <p class="eyebrow rv">What makes MetrouBUC different</p>
-    <h2 class="sh2 rv" data-d="1">Built for <em>real commuters</em></h2>
-    <p class="sub rv" data-d="2">Every feature designed around what you need underground — when there's no signal, no time, and no margin for error.</p>
+    <p class="eyebrow rv">Ce face MetrouBUC diferit</p>
+    <h2 class="sh2 rv" data-d="1">Construit pentru <em>navetiști reali</em></h2>
+    <p class="sub rv" data-d="2">Fiecare funcție este gândită pentru ce ai nevoie în subteran — când nu ai semnal, nu ai timp și nu există loc de greșeli.</p>
   </div>
   <div class="feat-grid">
     <div class="fcard large rv">
-      <div class="feat-tag"><div class="feat-tag-dot"></div>Signature Feature</div>
-      <div class="ftitle" style="font-size:1.5rem;margin-bottom:14px">Door-Side <span class="grad-text">Indicators</span></div>
-      <p class="fdesc" style="font-size:.95rem;max-width:480px;line-height:1.8">Know <strong style="color:var(--white)">exactly which side of the train</strong> to board for the fastest exit at your destination. A feature unique to MetrouBUC that saves precious seconds at every transfer — especially at busy interchange stations like Piața Unirii.</p>
+      <div class="feat-tag"><div class="feat-tag-dot"></div>Funcție emblematică</div>
+      <div class="ftitle" style="font-size:1.5rem;margin-bottom:14px">Indicatori pentru <span class="grad-text">partea ușilor</span></div>
+      <p class="fdesc" style="font-size:.95rem;max-width:480px;line-height:1.8">Știi <strong style="color:var(--white)">exact pe ce parte a trenului</strong> trebuie să te poziționezi pentru cea mai rapidă ieșire la destinație. O funcție distinctivă MetrouBUC, care îți economisește secunde prețioase la fiecare schimbare — mai ales în stațiile aglomerate de corespondență, precum Piața Unirii.</p>
     </div>
     <div class="fcard rv" data-d="1">
       <div class="fcard-top"><div class="ficon"><svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div><div class="fline-dot" style="background:var(--m1)"></div></div>
-      <div class="ftitle">Interactive Metro Map</div>
-      <p class="fdesc">Zoomable map of all 5 lines. Tap any station to see connections, exits and nearby places. Fully offline.</p>
+      <div class="ftitle">Hartă interactivă a metroului</div>
+      <p class="fdesc">Hartă cu zoom pentru toate cele 5 magistrale. Atinge orice stație ca să vezi conexiuni, ieșiri și locuri din apropiere. Complet offline.</p>
     </div>
     <div class="fcard rv" data-d="2">
       <div class="fcard-top"><div class="ficon"><svg viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M8.59 13.51l6.83-7.02"/></svg></div><div class="fline-dot" style="background:var(--m2)"></div></div>
-      <div class="ftitle">Smart Route Planner</div>
-      <p class="fdesc">Pick any two stations and get the fastest route with transfers and travel time instantly. No internet needed.</p>
+      <div class="ftitle">Planificator inteligent de traseu</div>
+      <p class="fdesc">Alege orice două stații și primești instant cel mai rapid traseu, cu schimbări și timp estimat de călătorie. Fără internet.</p>
     </div>
     <div class="fcard rv">
       <div class="fcard-top"><div class="ficon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div><div class="fline-dot" style="background:var(--m3)"></div></div>
-      <div class="ftitle">Real-Time GPS Tracking</div>
-      <p class="fdesc">Follow your journey underground and get alerted before you reach your station — even without signal.</p>
+      <div class="ftitle">Urmărire GPS în timp real</div>
+      <p class="fdesc">Urmărește-ți călătoria în subteran și primește alerte înainte să ajungi la stația ta — chiar și fără semnal.</p>
     </div>
     <div class="fcard rv" data-d="1">
       <div class="fcard-top"><div class="ficon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="fline-dot" style="background:var(--m4)"></div></div>
-      <div class="ftitle">Offline Schedules</div>
-      <p class="fdesc">Full Metrorex departure timetables for all stations on weekdays and weekends — no connection required.</p>
+      <div class="ftitle">Program offline</div>
+      <p class="fdesc">Orarul complet al plecărilor Metrorex pentru toate stațiile, în zile lucrătoare și în weekend — fără conexiune la internet.</p>
     </div>
     <div class="fcard rv" data-d="2">
       <div class="fcard-top"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="fline-dot" style="background:var(--m5)"></div></div>
-      <div class="ftitle">Nearby Places</div>
-      <p class="fdesc">Discover restaurants, pharmacies, ATMs and attractions near any station, without leaving the app.</p>
+      <div class="ftitle">Locuri din apropiere</div>
+      <p class="fdesc">Descoperă restaurante, farmacii, bancomate și atracții din apropierea oricărei stații, fără să părăsești aplicația.</p>
     </div>
     <div class="fcard rv">
       <div class="fcard-top"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.4-.1.9.3 1.1L11 12l-2 3H6l-1 1 3 2 2 3 1-1v-3l3-2 3.5 7.3c.3.4.7.5 1.1.3l.5-.3c.4-.2.5-.7.4-1.1z"/></svg></div><div class="fline-dot" style="background:var(--teal)"></div></div>
-      <div class="ftitle">Airport Connections</div>
-      <p class="fdesc">See which stations connect to both airports by bus or train, plus lift and wheelchair access info.</p>
+      <div class="ftitle">Conexiuni către aeroport</div>
+      <p class="fdesc">Vezi ce stații oferă legături către ambele aeroporturi prin autobuz sau tren, plus informații despre lift și acces pentru scaun rulant.</p>
     </div>
     <div class="fcard rv" data-d="1">
       <div class="fcard-top"><div class="ficon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/></svg></div><div class="fline-dot" style="background:var(--m1)"></div></div>
-      <div class="ftitle">Accessibility Info</div>
-      <p class="fdesc">Lift locations, wheelchair-accessible routes and ramp availability for every station in the network.</p>
+      <div class="ftitle">Informații de accesibilitate</div>
+      <p class="fdesc">Poziția lifturilor, trasee accesibile pentru scaun rulant și disponibilitatea rampelor pentru fiecare stație din rețea.</p>
     </div>
     <div class="fcard rv" data-d="2">
       <div class="fcard-top"><div class="ficon"><svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V4h14v16"/><path d="M10 20v-4h4v4"/></svg></div><div class="fline-dot" style="background:var(--m2)"></div></div>
-      <div class="ftitle">100% Offline</div>
-      <p class="fdesc">No internet needed, ever. All maps, schedules, routes and station data live on your device.</p>
+      <div class="ftitle">100% offline</div>
+      <p class="fdesc">Nu ai nevoie de internet, niciodată. Toate hărțile, programele, traseele și datele despre stații sunt stocate pe dispozitivul tău.</p>
     </div>
   </div>
 </section>
@@ -503,64 +604,63 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
 <!-- LINES -->
 <section class="lines-sec" id="lines">
   <div class="lines-hdr">
-    <p class="eyebrow rv">The full network</p>
-    <h2 class="sh2 rv" data-d="1">All <em>5 lines</em> covered</h2>
+    <p class="eyebrow rv">Rețeaua completă</p>
+    <h2 class="sh2 rv" data-d="1">Toate cele <em>5 magistrale</em></h2>
   </div>
   <div class="lines-grid">
-    <div class="lcard lc1 rv"><div class="lcard-bar"></div><div class="lcard-num">M1</div><div class="lcard-name">Dristor–Pantelimon</div><div class="lcard-info">22 stations · Gold line</div></div>
-    <div class="lcard lc2 rv" data-d="1"><div class="lcard-bar"></div><div class="lcard-num">M2</div><div class="lcard-name">Tudor Arghezi–Pipera</div><div class="lcard-info">15 stations · Blue line</div></div>
-    <div class="lcard lc3 rv" data-d="2"><div class="lcard-bar"></div><div class="lcard-num">M3</div><div class="lcard-name">Preciziei–Anghel Saligny</div><div class="lcard-info">15 stations · Red line</div></div>
-    <div class="lcard lc4 rv" data-d="3"><div class="lcard-bar"></div><div class="lcard-num">M4</div><div class="lcard-name">Gara de Nord–Straulesti</div><div class="lcard-info">8 stations · Green line</div></div>
-    <div class="lcard lc5 rv" data-d="4"><div class="lcard-bar"></div><div class="lcard-num">M5</div><div class="lcard-name">Eroilor–Valea Cascadelor</div><div class="lcard-info">10 stations · Orange line</div></div>
+    <div class="lcard lc1 rv"><div class="lcard-bar"></div><div class="lcard-num">M1</div><div class="lcard-name">Dristor–Pantelimon</div><div class="lcard-info">22 stații · Magistrala galbenă</div></div>
+    <div class="lcard lc2 rv" data-d="1"><div class="lcard-bar"></div><div class="lcard-num">M2</div><div class="lcard-name">Tudor Arghezi–Pipera</div><div class="lcard-info">15 stații · Magistrala albastră</div></div>
+    <div class="lcard lc3 rv" data-d="2"><div class="lcard-bar"></div><div class="lcard-num">M3</div><div class="lcard-name">Preciziei–Anghel Saligny</div><div class="lcard-info">15 stații · Magistrala roșie</div></div>
+    <div class="lcard lc4 rv" data-d="3"><div class="lcard-bar"></div><div class="lcard-num">M4</div><div class="lcard-name">Gara de Nord–Străulești</div><div class="lcard-info">8 stații · Magistrala verde</div></div>
+    <div class="lcard lc5 rv" data-d="4"><div class="lcard-bar"></div><div class="lcard-num">M5</div><div class="lcard-name">Eroilor–Valea Cascadelor</div><div class="lcard-info">10 stații · Magistrala portocalie</div></div>
   </div>
 </section>
 
 <!-- MAP -->
 <section class="map-sec" id="map">
   <div class="map-hdr">
-    <p class="eyebrow rv">Interactive · Web Version</p>
-    <h2 class="sh2 rv" data-d="1">Explore the <em>Metro Map</em></h2>
-    <p class="sub rv" data-d="2" style="max-width:540px;margin:0 auto">Browse every line, station and connection directly in your browser — no app required.</p>
+    <p class="eyebrow rv">Interactiv · Versiune web</p>
+    <h2 class="sh2 rv" data-d="1">Explorează <em>harta metroului</em></h2>
+    <p class="sub rv" data-d="2" style="max-width:540px;margin:0 auto">Vezi fiecare magistrală, stație și conexiune direct în browser — fără să instalezi aplicația.</p>
   </div>
-  <a href="https://metroubucuresti.ro/map" target="_blank" rel="noopener" class="map-frame-wrap rv" data-d="1">
-    <img src="https://metroubucuresti.ro/images/metro-map-preview.png" alt="Bucharest Metro Map Preview" style="width:100%;height:100%;object-fit:cover;display:block">
+  <a href="https://metroubucuresti.ro/map" target="_blank" rel="noopener" class="map-frame-wrap rv" data-d="1" aria-label="Deschide harta interactivă a metroului din București">
+    <img src="https://metroubucuresti.ro/images/metro-map-preview.png" alt="Previzualizare hartă metrou București" style="width:100%;height:100%;object-fit:cover;display:block">
     <div class="map-overlay"></div>
     <div class="map-click-hint">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-      Click to explore the map
+      Apasă pentru a explora harta
     </div>
   </a>
   <div class="map-cta-row rv" data-d="2">
     <a href="https://metroubucuresti.ro/map" target="_blank" rel="noopener" class="map-open-btn">
       <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-      Open Full Map
+      Deschide harta completă
     </a>
-    <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" target="_blank" rel="noopener" class="btn-s">Get the app for offline access →</a>
+    <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" target="_blank" rel="noopener" class="btn-s">Instalează aplicația pentru acces offline →</a>
   </div>
 </section>
-
 <!-- SCREENSHOTS -->
 <section class="shots" id="screenshots">
   <div class="shots-grid">
     <div>
-      <p class="eyebrow rv">See the app in action</p>
-      <h2 class="sh2 rv" data-d="1">Designed for <em>clarity</em></h2>
+      <p class="eyebrow rv">Vezi aplicația în acțiune</p>
+      <h2 class="sh2 rv" data-d="1">Gândită pentru <em>claritate</em></h2>
       <ul class="shots-list">
-        <li class="rv" data-d="1"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Clean dark interface optimised for underground lighting</li>
-        <li class="rv" data-d="2"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Colour-coded lines matching official Metrorex colours</li>
-        <li class="rv" data-d="3"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>One-tap route planning from your current location</li>
-        <li class="rv" data-d="4"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Station cards with exits, lifts and connections</li>
-        <li class="rv" data-d="5"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Journey progress bar visible at a glance</li>
+        <li class="rv" data-d="1"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Interfață dark curată, optimizată pentru iluminarea din subteran</li>
+        <li class="rv" data-d="2"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Magistrale colorate conform culorilor oficiale Metrorex</li>
+        <li class="rv" data-d="3"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Planificare traseu din locația curentă cu o singură atingere</li>
+        <li class="rv" data-d="4"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Carduri pentru stații cu ieșiri, lifturi și conexiuni</li>
+        <li class="rv" data-d="5"><div class="schk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Bară de progres a călătoriei, ușor de urmărit dintr-o privire</li>
       </ul>
       <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank" class="btn-p rv" data-d="6" style="display:inline-flex">
         <svg viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.27.07 2.15.59 2.9.6.9-.15 1.95-.66 3.14-.56 1.32.09 2.5.59 3.22 1.58-2.86 1.74-2.27 5.56.29 6.66-.5 1.4-1.17 2.76-1.55 4.6M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-        Download the App · Free
+        Descarcă aplicația · Gratuit
       </a>
     </div>
     <div class="shots-gal rv" data-d="2">
-      <div class="sw sw-tall"><img src="https://metroubucuresti.ro/images/8d.png" alt="Route selection" data-lb="https://metroubucuresti.ro/images/8d.png" data-li="0" loading="lazy"></div>
-      <div class="sw sw-short"><img src="https://metroubucuresti.ro/images/11d.png" alt="Station details" data-lb="https://metroubucuresti.ro/images/11d.png" data-li="1" loading="lazy"></div>
-      <div class="sw sw-tall"><img src="https://metroubucuresti.ro/images/13l.png" alt="Route overview" data-lb="https://metroubucuresti.ro/images/13l.png" data-li="2" loading="lazy"></div>
+      <div class="sw sw-tall"><img src="https://metroubucuresti.ro/images/8d.png" alt="Ecran de selectare a traseului" data-lb="https://metroubucuresti.ro/images/8d.png" data-li="0" loading="lazy"></div>
+      <div class="sw sw-short"><img src="https://metroubucuresti.ro/images/11d.png" alt="Ecran cu detalii despre stație" data-lb="https://metroubucuresti.ro/images/11d.png" data-li="1" loading="lazy"></div>
+      <div class="sw sw-tall"><img src="https://metroubucuresti.ro/images/13l.png" alt="Ecran cu prezentarea traseului" data-lb="https://metroubucuresti.ro/images/13l.png" data-li="2" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -568,21 +668,21 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
 <!-- GALLERY -->
 <div class="gallery">
   <div class="gallery-hdr">
-    <p class="eyebrow rv">All screens</p>
-    <h2 class="sh2 rv" data-d="1" style="font-size:clamp(1.6rem,2.5vw,2.2rem)">Every feature, <em>at a glance</em></h2>
+    <p class="eyebrow rv">Toate ecranele</p>
+    <h2 class="sh2 rv" data-d="1" style="font-size:clamp(1.6rem,2.5vw,2.2rem)">Fiecare funcție, <em>dintr-o privire</em></h2>
   </div>
   <div class="gtrack-wrap">
     <div class="gtrack">
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/8d.png" alt="Route selection dark" data-lb="https://metroubucuresti.ro/images/8d.png" data-li="3" loading="lazy"></div>
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/1d.png" alt="Route tracking dark" data-lb="https://metroubucuresti.ro/images/1d.png" data-li="4" loading="lazy"></div>
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/9d.png" alt="Airport connections" data-lb="https://metroubucuresti.ro/images/9d.png" data-li="5" loading="lazy"></div>
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/11d.png" alt="Station details dark" data-lb="https://metroubucuresti.ro/images/11d.png" data-li="6" loading="lazy"></div>
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/12d.png" alt="More station details" data-lb="https://metroubucuresti.ro/images/12d.png" data-li="7" loading="lazy"></div>
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/4l.png" alt="Route selection light" data-lb="https://metroubucuresti.ro/images/4l.png" data-li="8" loading="lazy"></div>
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/6l.png" alt="App settings light" data-lb="https://metroubucuresti.ro/images/6l.png" data-li="9" loading="lazy"></div>
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/13l.png" alt="Route overview light" data-lb="https://metroubucuresti.ro/images/13l.png" data-li="10" loading="lazy"></div>
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/9l.png" alt="Station details light" data-lb="https://metroubucuresti.ro/images/9l.png" data-li="11" loading="lazy"></div>
-      <div class="gshot"><img src="https://metroubucuresti.ro/images/10l.png" alt="More details light" data-lb="https://metroubucuresti.ro/images/10l.png" data-li="12" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/8d.png" alt="Selectare traseu în temă dark" data-lb="https://metroubucuresti.ro/images/8d.png" data-li="3" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/1d.png" alt="Urmărire traseu în temă dark" data-lb="https://metroubucuresti.ro/images/1d.png" data-li="4" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/9d.png" alt="Conexiuni către aeroport" data-lb="https://metroubucuresti.ro/images/9d.png" data-li="5" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/11d.png" alt="Detalii stație în temă dark" data-lb="https://metroubucuresti.ro/images/11d.png" data-li="6" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/12d.png" alt="Mai multe detalii despre stație" data-lb="https://metroubucuresti.ro/images/12d.png" data-li="7" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/4l.png" alt="Selectare traseu în temă light" data-lb="https://metroubucuresti.ro/images/4l.png" data-li="8" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/6l.png" alt="Setări aplicație în temă light" data-lb="https://metroubucuresti.ro/images/6l.png" data-li="9" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/13l.png" alt="Prezentare traseu în temă light" data-lb="https://metroubucuresti.ro/images/13l.png" data-li="10" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/9l.png" alt="Detalii stație în temă light" data-lb="https://metroubucuresti.ro/images/9l.png" data-li="11" loading="lazy"></div>
+      <div class="gshot"><img src="https://metroubucuresti.ro/images/10l.png" alt="Mai multe detalii în temă light" data-lb="https://metroubucuresti.ro/images/10l.png" data-li="12" loading="lazy"></div>
     </div>
   </div>
 </div>
@@ -590,44 +690,44 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
 <!-- REVIEWS -->
 <section class="reviews">
   <div class="reviews-hdr">
-    <p class="eyebrow rv">100% real reviews (we promise)*</p>
-    <h2 class="sh2 rv" data-d="1">What <em>"users"</em> say</h2>
+    <p class="eyebrow rv">100% recenzii reale (promitem)*</p>
+    <h2 class="sh2 rv" data-d="1">Ce spun <em>„utilizatorii”</em></h2>
   </div>
   <div class="marquee-wrap">
     <div class="marquee">
-      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"My son made this app. MY SON. I've sent it to all the neighbours, the lady at the bakery, our family doctor and the priest. He is the smartest child in the world and surrounding areas."</p><div class="rauthor"><span class="ravatar">👩</span><div><div class="rname">Mum 💚</div><div class="rmeta">Majority shareholder · Unofficial PR manager</div></div></div></div>
-      <div class="rcard"><div class="rstars">★★★<span class="e">★★</span></div><p class="rtext">"I delivered coffee in the underpass at Piața Unirii. Everyone was walking in the same direction and nobody knew where. Thanks to the app I found the nearest exit and survived. 3 stars because I spilled the coffee."</p><div class="rauthor"><span class="ravatar">🛵</span><div><div class="rname">Angry Courier™</div><div class="rmeta">Order: 1x double espresso · 6:17 PM</div></div></div></div>
-      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Ich bin... lost. But the app saved me. I made it to the hotel, cried a little from happiness and gave 5 stars. Danke, MetrouBUC."</p><div class="rauthor"><span class="ravatar">🇩🇪</span><div><div class="rname">Klaus W.</div><div class="rmeta">Lost tourist · Frankfurt → Bucharest</div></div></div></div>
-      <div class="rcard"><div class="rstars">★<span class="e">★★★★</span></div><p class="rtext">"I don't know what this internet is. My granddaughter put something on my phone. The train still goes the same. I give one star because I don't know how to give more."</p><div class="rauthor"><span class="ravatar">👴</span><div><div class="rname">Gheorghe, 74</div><div class="rmeta">Retired · Timpuri Noi since 1987</div></div></div></div>
-      <div class="rcard"><div class="rstars">★★★★<span class="e">★</span></div><p class="rtext">"I arrived at my exam 2 minutes before it started. Minus one star because the app didn't wake me up too. Otherwise perfect."</p><div class="rauthor"><span class="ravatar">🎓</span><div><div class="rname">ASE University Student</div><div class="rmeta">Winter exam session · she passed</div></div></div></div>
-      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Since I got the app, I've missed my stop only 3 times instead of 47. My wife is impressed. Our relationship has improved significantly."</p><div class="rauthor"><span class="ravatar">😅</span><div><div class="rname">Mihai, software engineer</div><div class="rmeta">Former national champion at missing stops</div></div></div></div>
-      <div class="rcard"><div class="rstars">★★<span class="e">★★★</span></div><p class="rtext">"This metro competition is getting serious. My customers now arrive faster than I do. 2 stars and I'm going to reflect on my life choices."</p><div class="rauthor"><span class="ravatar">🚕</span><div><div class="rname">Ion, taxi driver</div><div class="rmeta">25 years in Bucharest traffic</div></div></div></div>
-      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"I used the app to get to a date at Victoriei. The date went badly, but at least I arrived on time. MetrouBUC: 10/10. Date: 2/10."</p><div class="rauthor"><span class="ravatar">💔</span><div><div class="rname">Anonim</div><div class="rmeta">Single again · Piața Victoriei</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Fiul meu a făcut aplicația asta. FIUL MEU. Am trimis-o tuturor vecinilor, doamnei de la brutărie, medicului de familie și preotului. Este cel mai deștept copil din lume și din împrejurimi."</p><div class="rauthor"><span class="ravatar">👩</span><div><div class="rname">Mama 💚</div><div class="rmeta">Acționar majoritar · Manager PR neoficial</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★<span class="e">★★</span></div><p class="rtext">"Livram cafea în pasaj la Piața Unirii. Toți mergeau în aceeași direcție și nimeni nu știa unde. Datorită aplicației am găsit cea mai apropiată ieșire și am supraviețuit. 3 stele pentru că am vărsat cafeaua."</p><div class="rauthor"><span class="ravatar">🛵</span><div><div class="rname">Curier nervos™</div><div class="rmeta">Comandă: 1x espresso dublu · 18:17</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Ich bin... pierdut. Dar aplicația m-a salvat. Am ajuns la hotel, am plâns puțin de fericire și am dat 5 stele. Danke, MetrouBUC."</p><div class="rauthor"><span class="ravatar">🇩🇪</span><div><div class="rname">Klaus W.</div><div class="rmeta">Turist rătăcit · Frankfurt → București</div></div></div></div>
+      <div class="rcard"><div class="rstars">★<span class="e">★★★★</span></div><p class="rtext">"Nu știu ce este internetul ăsta. Nepoata mea a pus ceva pe telefonul meu. Trenul merge tot la fel. Dau o stea pentru că nu știu cum să dau mai multe."</p><div class="rauthor"><span class="ravatar">👴</span><div><div class="rname">Gheorghe, 74</div><div class="rmeta">Pensionar · Timpuri Noi din 1987</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★★<span class="e">★</span></div><p class="rtext">"Am ajuns la examen cu 2 minute înainte să înceapă. Minus o stea pentru că aplicația nu m-a trezit și pe mine. În rest, perfect."</p><div class="rauthor"><span class="ravatar">🎓</span><div><div class="rname">Student la ASE</div><div class="rmeta">Sesiunea de iarnă · a trecut examenul</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"De când am aplicația, am ratat stația doar de 3 ori în loc de 47. Soția mea este impresionată. Relația noastră s-a îmbunătățit considerabil."</p><div class="rauthor"><span class="ravatar">😅</span><div><div class="rname">Mihai, inginer software</div><div class="rmeta">Fost campion național la ratat stații</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★<span class="e">★★★</span></div><p class="rtext">"Competiția asta cu metroul devine serioasă. Clienții mei ajung acum mai repede decât mine. 2 stele și mă voi gândi serios la alegerile mele în viață."</p><div class="rauthor"><span class="ravatar">🚕</span><div><div class="rname">Ion, taximetrist</div><div class="rmeta">25 de ani în traficul din București</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Am folosit aplicația ca să ajung la un date la Victoriei. Întâlnirea a mers prost, dar măcar am ajuns la timp. MetrouBUC: 10/10. Date-ul: 2/10."</p><div class="rauthor"><span class="ravatar">💔</span><div><div class="rname">Anonim</div><div class="rmeta">Din nou singur · Piața Victoriei</div></div></div></div>
       <!-- duplicate for seamless loop -->
-      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"My son made this app. MY SON. I've sent it to all the neighbours, the lady at the bakery, our family doctor and the priest. He is the smartest child in the world and surrounding areas."</p><div class="rauthor"><span class="ravatar">👩</span><div><div class="rname">Mum 💚</div><div class="rmeta">Majority shareholder · Unofficial PR manager</div></div></div></div>
-      <div class="rcard"><div class="rstars">★★★<span class="e">★★</span></div><p class="rtext">"I delivered coffee in the underpass at Piața Unirii. Everyone was walking in the same direction and nobody knew where. Thanks to the app I found the nearest exit and survived. 3 stars because I spilled the coffee."</p><div class="rauthor"><span class="ravatar">🛵</span><div><div class="rname">Angry Courier™</div><div class="rmeta">Order: 1x double espresso · 6:17 PM</div></div></div></div>
-      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Ich bin... lost. But the app saved me. I made it to the hotel, cried a little from happiness and gave 5 stars. Danke, MetrouBUC."</p><div class="rauthor"><span class="ravatar">🇩🇪</span><div><div class="rname">Klaus W.</div><div class="rmeta">Lost tourist · Frankfurt → Bucharest</div></div></div></div>
-      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Since I got the app, I've missed my stop only 3 times instead of 47. My wife is impressed. Our relationship has improved significantly."</p><div class="rauthor"><span class="ravatar">😅</span><div><div class="rname">Mihai, software engineer</div><div class="rmeta">Former national champion at missing stops</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Fiul meu a făcut aplicația asta. FIUL MEU. Am trimis-o tuturor vecinilor, doamnei de la brutărie, medicului de familie și preotului. Este cel mai deștept copil din lume și din împrejurimi."</p><div class="rauthor"><span class="ravatar">👩</span><div><div class="rname">Mama 💚</div><div class="rmeta">Acționar majoritar · Manager PR neoficial</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★<span class="e">★★</span></div><p class="rtext">"Livram cafea în pasaj la Piața Unirii. Toți mergeau în aceeași direcție și nimeni nu știa unde. Datorită aplicației am găsit cea mai apropiată ieșire și am supraviețuit. 3 stele pentru că am vărsat cafeaua."</p><div class="rauthor"><span class="ravatar">🛵</span><div><div class="rname">Curier nervos™</div><div class="rmeta">Comandă: 1x espresso dublu · 18:17</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"Ich bin... pierdut. Dar aplicația m-a salvat. Am ajuns la hotel, am plâns puțin de fericire și am dat 5 stele. Danke, MetrouBUC."</p><div class="rauthor"><span class="ravatar">🇩🇪</span><div><div class="rname">Klaus W.</div><div class="rmeta">Turist rătăcit · Frankfurt → București</div></div></div></div>
+      <div class="rcard"><div class="rstars">★★★★★</div><p class="rtext">"De când am aplicația, am ratat stația doar de 3 ori în loc de 47. Soția mea este impresionată. Relația noastră s-a îmbunătățit considerabil."</p><div class="rauthor"><span class="ravatar">😅</span><div><div class="rname">Mihai, inginer software</div><div class="rmeta">Fost campion național la ratat stații</div></div></div></div>
     </div>
   </div>
-  <p class="rdisclaim">* The reviews above are fictional and created for humorous purposes. The MetrouBUC app is very much real. 🙂</p>
+  <p class="rdisclaim">* Recenziile de mai sus sunt fictive și create în scop umoristic. Aplicația MetrouBUC este cât se poate de reală. 🙂</p>
 </section>
 
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="faq-hdr">
-    <p class="eyebrow rv">Frequently asked questions</p>
-    <h2 class="sh2 rv" data-d="1">Common <em>Questions</em></h2>
+    <p class="eyebrow rv">Întrebări frecvente</p>
+    <h2 class="sh2 rv" data-d="1">Întrebări <em>comune</em></h2>
   </div>
   <div class="faq-grid">
-    <div class="fitem rv"><p class="fq">Where can I find the Metrou București map?</p><p class="fa">The app gives you direct access to routes, station details, next train arrivals, nearby places and airport connections. You can also browse the web map at <a href="https://metroubucuresti.ro/map.html">metroubucuresti.ro/map.html</a>.</p></div>
-    <div class="fitem rv" data-d="1"><p class="fq">How many metro lines does Bucharest have?</p><p class="fa">Bucharest has 5 active metro lines: M1 (gold), M2 (blue), M3 (red), M4 (green) and M5 (orange), covering approximately 78 km across 63 stations.</p></div>
-    <div class="fitem rv"><p class="fq">Is the app free?</p><p class="fa">Yes, completely free on Android. No in-app purchases, no account required. Works 100% offline.</p></div>
-    <div class="fitem rv" data-d="1"><p class="fq">Does it work without internet?</p><p class="fa">Yes, 100% offline. Route planning, schedules, GPS tracking, accessibility info and station details all work underground without mobile data.</p></div>
-    <div class="fitem rv"><p class="fq">Is this the official Metrorex app?</p><p class="fa">MetrouBUC is an independent app, unaffiliated with Metrorex S.A. It uses publicly available transport data to provide free, offline navigation.</p></div>
-    <div class="fitem rv" data-d="1"><p class="fq">What are the metro operating hours?</p><p class="fa">Metrou București runs daily from approximately 05:00 to 23:00. Exact departure times for every station are available offline in the app.</p></div>
-    <div class="fitem rv"><p class="fq">Is there a metro to Bucharest airport?</p><p class="fa">Not yet. The future M6 line linking the city to Henri Coandă Airport is under construction, estimated for ~2029. MetrouBUC shows the closest bus and train connections.</p></div>
-    <div class="fitem rv" data-d="1"><p class="fq">How do I plan a route?</p><p class="fa">Open the route planner, select departure and destination, and the app instantly shows the fastest route with transfers and estimated time — all offline.</p></div>
+    <div class="fitem rv"><p class="fq">Unde pot găsi harta Metrou București?</p><p class="fa">Aplicația îți oferă acces direct la trasee, detalii despre stații, sosiri ale trenurilor, locuri din apropiere și conexiuni către aeroport. Poți explora și harta web la <a href="https://metroubucuresti.ro/map.html">metroubucuresti.ro/map.html</a>.</p></div>
+    <div class="fitem rv" data-d="1"><p class="fq">Câte magistrale de metrou are Bucureștiul?</p><p class="fa">Bucureștiul are 5 magistrale active de metrou: M1 (galben), M2 (albastru), M3 (roșu), M4 (verde) și M5 (portocaliu), care acoperă aproximativ 78 km și 63 de stații.</p></div>
+    <div class="fitem rv"><p class="fq">Aplicația este gratuită?</p><p class="fa">Da, este complet gratuită pe Android. Fără achiziții în aplicație și fără cont necesar. Funcționează 100% offline.</p></div>
+    <div class="fitem rv" data-d="1"><p class="fq">Funcționează fără internet?</p><p class="fa">Da, 100% offline. Planificarea traseelor, programul, urmărirea GPS, informațiile de accesibilitate și detaliile despre stații funcționează în subteran fără date mobile.</p></div>
+    <div class="fitem rv"><p class="fq">Este aceasta aplicația oficială Metrorex?</p><p class="fa">MetrouBUC este o aplicație independentă, neafiliată cu Metrorex S.A. Folosește date publice despre transport pentru a oferi navigare gratuită, offline.</p></div>
+    <div class="fitem rv" data-d="1"><p class="fq">Care este programul de funcționare al metroului?</p><p class="fa">Metroul din București circulă zilnic, în general, între aproximativ 05:00 și 23:00. În aplicație găsești offline orele exacte de plecare pentru fiecare stație.</p></div>
+    <div class="fitem rv"><p class="fq">Există metrou până la aeroportul din București?</p><p class="fa">Încă nu. Viitoarea magistrală M6, care va lega orașul de Aeroportul Henri Coandă, este în construcție. MetrouBUC îți arată cele mai apropiate conexiuni disponibile cu autobuzul și trenul.</p></div>
+    <div class="fitem rv" data-d="1"><p class="fq">Cum planific un traseu?</p><p class="fa">Deschide planificatorul de traseu, selectează plecarea și destinația, iar aplicația îți arată instant cel mai rapid traseu, cu schimbări și timp estimat — totul offline.</p></div>
   </div>
 </section>
 
@@ -637,23 +737,23 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
     <div class="cta-bg"></div>
     <div class="cta-strip"></div>
     <div style="position:relative;z-index:1">
-      <div class="cta-eyebrow"><div class="cta-dot"></div>Free · No account · Works underground</div>
-      <h2 class="cta-h2">Ready to navigate with <em>MetrouBUC?</em></h2>
-      <p class="cta-sub">Join thousands of daily commuters, tourists and students navigating Bucharest smarter.</p>
+      <div class="cta-eyebrow"><div class="cta-dot"></div>Gratuit · Fără cont · Funcționează în subteran</div>
+      <h2 class="cta-h2">Ești gata să navighezi cu <em>MetrouBUC?</em></h2>
+      <p class="cta-sub">Alătură-te miilor de navetiști, turiști și studenți care se deplasează mai inteligent prin București.</p>
       <div class="cta-btns">
         <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank" class="btn-cta">
           <svg viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.27.07 2.15.59 2.9.6.9-.15 1.95-.66 3.14-.56 1.32.09 2.5.59 3.22 1.58-2.86 1.74-2.27 5.56.29 6.66-.5 1.4-1.17 2.76-1.55 4.6M12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-          Download Free on Google Play
+          Descarcă gratuit din Google Play
         </a>
-        <a href="https://metroubucuresti.ro/map.html" class="btn-cta-o">🗺 Explore the Metro Map</a>
+        <a href="https://metroubucuresti.ro/map.html" class="btn-cta-o">🗺 Explorează harta metroului</a>
       </div>
       <div class="cta-pills">
-        <div class="cpill">100% Free</div>
-        <div class="cpill">30-second install</div>
-        <div class="cpill">Works offline</div>
-        <div class="cpill">No account needed</div>
-        <div class="cpill">GPS tracking</div>
-        <div class="cpill">63 stations</div>
+        <div class="cpill">100% gratuit</div>
+        <div class="cpill">Instalare în 30 de secunde</div>
+        <div class="cpill">Funcționează offline</div>
+        <div class="cpill">Fără cont</div>
+        <div class="cpill">Urmărire GPS</div>
+        <div class="cpill">63 de stații</div>
       </div>
     </div>
   </div>
@@ -664,41 +764,41 @@ footer::before{content:'';position:absolute;inset:0;pointer-events:none;backgrou
   <div class="foot-top">
     <div>
       <div class="foot-brand"><div class="foot-lm"></div><span class="foot-name">Metrou București</span></div>
-      <p class="foot-desc">Free Android app for navigating Bucharest's metro. All 5 Metrorex lines, fully offline, with accessibility info and nearby places.</p>
+      <p class="foot-desc">Aplicație Android gratuită pentru navigarea prin metroul din București. Toate cele 5 magistrale Metrorex, complet offline, cu informații de accesibilitate și locuri din apropiere.</p>
     </div>
     <div class="foot-col">
-      <h4>App</h4>
+      <h4>Aplicație</h4>
       <a href="https://play.google.com/store/apps/details?id=com.MetroBuc" rel="noopener" target="_blank">Google Play</a>
-      <a href="#features">Features</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="https://metroubucuresti.ro/map.html">Metro Map</a>
+      <a href="#features">Funcții</a>
+      <a href="#screenshots">Capturi</a>
+      <a href="https://metroubucuresti.ro/map.html">Hartă metrou</a>
     </div>
     <div class="foot-col">
-      <h4>Info</h4>
-      <a href="#faq">FAQ</a>
+      <h4>Informații</h4>
+      <a href="#faq">Întrebări frecvente</a>
       <a href="https://metroubucuresti.ro/feedback.html" rel="noopener" target="_blank">Contact</a>
-      <a href="https://metroubucuresti.ro/">Romanian Version</a>
+      <a href="https://metroubucuresti.ro/en/">English Version</a>
     </div>
     <div class="foot-col">
       <h4>Legal</h4>
-      <a href="https://metroubucuresti.ro/metrou-bucuresti-terms.html" rel="noopener" target="_blank">Terms &amp; Conditions</a>
-      <a href="https://metroubucuresti.ro/metrou-bucuresti-privacy.html" rel="noopener" target="_blank">Privacy Policy</a>
-      <a href="https://metroubucuresti.ro/metrou-bucuresti-data-usage.html" rel="noopener" target="_blank">Data Usage</a>
+      <a href="https://metroubucuresti.ro/metrou-bucuresti-terms.html" rel="noopener" target="_blank">Termeni și condiții</a>
+      <a href="https://metroubucuresti.ro/metrou-bucuresti-privacy.html" rel="noopener" target="_blank">Politica de confidențialitate</a>
+      <a href="https://metroubucuresti.ro/metrou-bucuresti-data-usage.html" rel="noopener" target="_blank">Utilizarea datelor</a>
     </div>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">© 2025 Metrou București · MetrouBUC. Independent app, unaffiliated with Metrorex S.A.</span>
+    <span class="foot-copy">© 2025 Metrou București · MetrouBUC. Aplicație independentă, neafiliată cu Metrorex S.A.</span>
     <div class="fdots"><div class="fdot"></div><div class="fdot"></div><div class="fdot"></div><div class="fdot"></div><div class="fdot"></div></div>
   </div>
 </footer>
 
 <!-- LIGHTBOX -->
-<div class="lb" id="lb" role="dialog" aria-modal="true">
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Vizualizare imagine">
   <div class="lb-c">
-    <button class="lb-x" id="lbx">✕</button>
+    <button class="lb-x" id="lbx" aria-label="Închide">✕</button>
     <img id="lbimg" src="" alt="">
     <p class="lb-cap" id="lbcap"></p>
-    <div class="lb-nav"><button id="lbprev">← Prev</button><button id="lbnext">Next →</button></div>
+    <div class="lb-nav"><button id="lbprev">← Anterior</button><button id="lbnext">Următor →</button></div>
   </div>
 </div>
 
@@ -806,8 +906,7 @@ document.querySelectorAll('.fcard').forEach(function(c){
   window.addEventListener('resize',resize,{passive:true});
 
   function C(hex){ return [parseInt(hex.slice(1,3),16),parseInt(hex.slice(3,5),16),parseInt(hex.slice(5,7),16)]; }
-
-  /* ── Draw tunnel bore + wall shading ── */
+    /* ── Draw tunnel bore + wall shading ── */
   function drawTunnel(ty,r,g,b){
     /* bore fill — slightly darker than surrounding ground */
     var bore=ctx.createLinearGradient(0,ty-TH,0,ty+TH);
