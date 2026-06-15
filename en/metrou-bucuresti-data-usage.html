@@ -98,10 +98,10 @@
 <div class="line-strip"></div>
 
 <header>
-    <div class="header-icon">📊</div>
+    <div class="header-icon">📱</div>
     <h1>Data Usage Policy</h1>
     <p class="header-meta">Metrou București — Android Application</p>
-    <div class="header-badge">📱 Last updated: March 2026</div>
+    <div class="header-badge">📱 Last updated: June 2026</div>
 </header>
 
 <nav class="nav-bar">
@@ -119,7 +119,7 @@
         <span class="callout-icon">✅</span>
         <div class="callout-body">
             <strong>The short version</strong>
-            The App processes almost everything locally on your device. The only external data flows are map tile requests (OpenStreetMap) and — if you consent — ad signals to Google AdMob. We run no analytics and collect no personal information ourselves.
+            The App processes almost everything locally on your device. The only external data flows are map tile requests (OpenStreetMap) and — if you consent — ad signals to Google AdMob and anonymous usage statistics to Google Analytics for Firebase. Both Google services stay off until you grant GDPR consent, and we collect no directly identifying personal information ourselves.
         </div>
     </div>
 
@@ -131,6 +131,7 @@
             <li><a href="#s3">Local Processing</a></li>
             <li><a href="#s4">External Data Flows</a></li>
             <li><a href="#s5">Google AdMob &amp; GDPR</a></li>
+            <li><a href="#s5b">Analytics &amp; Consent</a></li>
             <li><a href="#s6">Data Retention &amp; Deletion</a></li>
             <li><a href="#s7">Your Controls</a></li>
             <li><a href="#s8">Security</a></li>
@@ -161,7 +162,7 @@
                 <p class="card-body">Theme, language, font size, and route-tracking behaviour. Saved locally via Android SharedPreferences.</p>
             </div>
             <div class="card">
-                <div class="card-icon">🐛</div>
+                <div class="card-icon">🐞</div>
                 <p class="card-title">Crash reports (opt-in)</p>
                 <p class="card-body">If the app crashes, a report is saved locally. It is sent to us only if you explicitly choose to email it from Settings.</p>
             </div>
@@ -169,6 +170,11 @@
                 <div class="card-icon">📢</div>
                 <p class="card-title">Ad signals (consent)</p>
                 <p class="card-body">Google AdMob collects the Advertising ID and device info for ad targeting only after you grant GDPR consent on first launch.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <p class="card-title">Analytics events (consent)</p>
+                <p class="card-body">Google Analytics for Firebase collects anonymous app events, screen views and device info only after you grant GDPR consent. Off by default.</p>
             </div>
             <div class="card">
                 <div class="card-icon">🗺️</div>
@@ -188,7 +194,7 @@
                 <span class="perm-badge required">Required</span>
                 <div class="perm-info">
                     <p class="perm-name">INTERNET</p>
-                    <p class="perm-desc">Needed to load OpenStreetMap tiles and serve AdMob advertisements.</p>
+                    <p class="perm-desc">Needed to load OpenStreetMap tiles, serve AdMob advertisements, and send analytics events (after consent).</p>
                 </div>
             </li>
             <li class="perm-item">
@@ -202,7 +208,7 @@
                 <span class="perm-badge required">Required (Play policy)</span>
                 <div class="perm-info">
                     <p class="perm-name">AD_ID</p>
-                    <p class="perm-desc">Declared as required by Google Play when AdMob is integrated. Only used by AdMob if you consent to personalised advertising.</p>
+                    <p class="perm-desc">Declared as required by Google Play when AdMob is integrated. Used by AdMob and analytics only if you consent.</p>
                 </div>
             </li>
             <li class="perm-item">
@@ -242,7 +248,8 @@
         <ul>
             <li><strong>OSM tile requests</strong> — when you open the map view, tile images are fetched from OpenStreetMap servers. These are standard HTTP GET requests; OSM servers may log your IP address per their own privacy policy.</li>
             <li><strong>OSRM routing queries</strong> — when map-based navigation is active, waypoints are sent to an OSRM instance for routing calculations.</li>
-            <li><strong>AdMob ad requests</strong> — when ads are loaded, Google AdMob receives device and context signals (see Section 5).</li>
+            <li><strong>AdMob ad requests</strong> — when ads are loaded, Google AdMob receives device and context signals (see Section 5). Only after consent.</li>
+            <li><strong>Analytics events</strong> — anonymous app events and device info are sent to Google Analytics for Firebase (see Section 5b). Only after consent; off by default.</li>
             <li><strong>Crash report emails</strong> — only if you manually choose to send one from Settings → Crash Reporting.</li>
             <li><strong>External app launches</strong> — opening a location in Google Maps or a similar app is initiated entirely by your tap.</li>
         </ul>
@@ -260,13 +267,30 @@
             <li><strong>Consent declined</strong> — AdMob shows contextual (non-personalised) ads. Some contextual signals (app context, general location) are still used.</li>
         </ul>
         <div class="callout info">
-            <span class="callout-icon">🔄</span>
+            <span class="callout-icon">🔁</span>
             <div class="callout-body">
                 <strong>Changing your consent</strong>
                 You can review and reset your GDPR consent at any time via <strong>Settings → About → Reset Consent</strong> inside the app. The consent dialogue will reappear on the next app launch.
             </div>
         </div>
         <p>For Google's full data practices see: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank">AdMob data disclosure</a>.</p>
+    </section>
+
+    <section class="section" id="s5b">
+        <div class="section-header">
+            <div class="section-num">5b</div>
+            <h2>Analytics &amp; Consent</h2>
+        </div>
+        <p>Metrou București uses <strong>Google Analytics for Firebase</strong> to collect anonymous, aggregated statistics about how the App is used (for example which features are opened and how often). This helps us prioritise improvements. We do not use it to identify you personally or to build advertising profiles.</p>
+        <div class="callout good">
+            <span class="callout-icon">✅</span>
+            <div class="callout-body">
+                <strong>Off by default — consent first</strong>
+                Analytics collection is disabled by default and only activates after you grant consent via the same GDPR consent dialogue (Google's UMP). The same choice that controls ads also controls analytics: if you decline, no analytics data is collected. This is enforced in the app and via Google's consent-mode signals.
+            </div>
+        </div>
+        <p><strong>Collected only after consent:</strong> app events &amp; screen views, session counts, device model, OS and app version, language/country, and approximate (IP-based, city-level) location. <strong>Never collected:</strong> your name, email, precise GPS, or your local notes/favourites.</p>
+        <p>See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy &amp; Security</a> for Google's data practices.</p>
     </section>
 
     <section class="section" id="s6">
@@ -280,10 +304,11 @@
             <li>Station notes and favourites can be deleted individually within the app</li>
             <li>All local data is permanently removed when you uninstall Metrou București</li>
         </ul>
-        <h3>AdMob data</h3>
+        <h3>AdMob &amp; Analytics data</h3>
         <ul>
             <li>Managed by Google per their data-retention policies</li>
             <li>You can reset your Advertising ID at any time via Android Settings</li>
+            <li>Declining or resetting consent stops further ad-personalisation and analytics collection</li>
         </ul>
         <h3>Crash reports</h3>
         <ul>
@@ -299,7 +324,7 @@
         </div>
         <ul>
             <li><strong>Location access</strong> — grant or revoke in Android Settings → Apps → Metrou București → Permissions</li>
-            <li><strong>Ad personalisation</strong> — opt out via Android Settings → Google → Ads, or reset consent inside the app</li>
+            <li><strong>Ad personalisation &amp; analytics</strong> — opt out via Android Settings → Google → Ads, or reset consent inside the app (this disables analytics too)</li>
             <li><strong>Crash reports</strong> — view, send, or delete individual reports in Settings → Crash Reporting</li>
             <li><strong>All app data</strong> — clear via Android Settings → Apps → Metrou București → Storage → Clear Data, or by uninstalling</li>
         </ul>
@@ -312,7 +337,7 @@
         </div>
         <ul>
             <li>All local data is protected by standard Android application sandboxing</li>
-            <li>Network connections to OSM and AdMob use HTTPS/TLS</li>
+            <li>Network connections to OSM, AdMob and Firebase use HTTPS/TLS</li>
             <li>No sensitive personal data (passwords, financial information, health data) is ever collected or stored</li>
             <li>The App does not implement its own user accounts or authentication</li>
         </ul>
