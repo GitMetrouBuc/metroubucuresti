@@ -98,10 +98,10 @@
 <div class="line-strip"></div>
 
 <header>
-    <div class="header-icon">📊</div>
+    <div class="header-icon">📱</div>
     <h1>Politica de utilizare a datelor</h1>
     <p class="header-meta">Metrou București — Aplicație Android</p>
-    <div class="header-badge">📱 Ultima actualizare: Martie 2026</div>
+    <div class="header-badge">📱 Ultima actualizare: Iunie 2026</div>
 </header>
 
 <nav class="nav-bar">
@@ -119,7 +119,7 @@
         <span class="callout-icon">✅</span>
         <div class="callout-body">
             <strong>Pe scurt</strong>
-            Aplicația procesează aproape totul local pe dispozitivul tău. Singurele fluxuri de date externe sunt cererile pentru imaginile hărții (OpenStreetMap) și — dacă îți dai acordul — semnale pentru reclame prin Google AdMob. Nu rulăm analize și nu colectăm date personale.
+            Aplicația procesează aproape totul local pe dispozitivul tău. Singurele fluxuri de date externe sunt cererile pentru imaginile hărții (OpenStreetMap) și — dacă îți dai acordul — semnale pentru reclame către Google AdMob și statistici anonime de utilizare către Google Analytics pentru Firebase. Ambele servicii Google rămân dezactivate până când acorzi consimțământul GDPR, iar noi nu colectăm date personale care să te identifice direct.
         </div>
     </div>
 
@@ -131,6 +131,7 @@
             <li><a href="#s3">Procesare locală</a></li>
             <li><a href="#s4">Fluxuri externe de date</a></li>
             <li><a href="#s5">Google AdMob &amp; GDPR</a></li>
+            <li><a href="#s5b">Analiză &amp; consimțământ</a></li>
             <li><a href="#s6">Păstrarea și ștergerea datelor</a></li>
             <li><a href="#s7">Controalele tale</a></li>
             <li><a href="#s8">Securitate</a></li>
@@ -161,7 +162,7 @@
                 <p class="card-body">Temă, limbă, dimensiunea fontului și comportamentul de urmărire a traseului. Salvate local prin Android SharedPreferences.</p>
             </div>
             <div class="card">
-                <div class="card-icon">🐛</div>
+                <div class="card-icon">🐞</div>
                 <p class="card-title">Rapoarte de erori (opt-in)</p>
                 <p class="card-body">Dacă aplicația se blochează, un raport este salvat local. Este trimis numai dacă alegi explicit să îl trimiți prin email din Setări.</p>
             </div>
@@ -169,6 +170,11 @@
                 <div class="card-icon">📢</div>
                 <p class="card-title">Semnale pentru reclame (consimțământ)</p>
                 <p class="card-body">Google AdMob colectează ID-ul publicitar și informații despre dispozitiv pentru targetarea reclamelor doar după ce acorzi consimțământul GDPR la prima lansare.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <p class="card-title">Evenimente de analiză (consimțământ)</p>
+                <p class="card-body">Google Analytics pentru Firebase colectează evenimente anonime din aplicație, vizualizări de ecrane și informații despre dispozitiv doar după ce acorzi consimțământul GDPR. Dezactivat implicit.</p>
             </div>
             <div class="card">
                 <div class="card-icon">🗺️</div>
@@ -188,7 +194,7 @@
                 <span class="perm-badge required">Necesar</span>
                 <div class="perm-info">
                     <p class="perm-name">INTERNET</p>
-                    <p class="perm-desc">Necesar pentru a încărca imaginile OpenStreetMap și pentru a afișa reclame AdMob.</p>
+                    <p class="perm-desc">Necesar pentru a încărca imaginile OpenStreetMap, pentru a afișa reclame AdMob și pentru a trimite evenimente de analiză (după consimțământ).</p>
                 </div>
             </li>
             <li class="perm-item">
@@ -202,7 +208,7 @@
                 <span class="perm-badge required">Necesar (politică Play)</span>
                 <div class="perm-info">
                     <p class="perm-name">AD_ID</p>
-                    <p class="perm-desc">Declarat ca necesar de Google Play când AdMob este integrat. Folosit de AdMob doar dacă îți dai consimțământul pentru reclame personalizate.</p>
+                    <p class="perm-desc">Declarat ca necesar de Google Play când AdMob este integrat. Folosit de AdMob și de analiză doar dacă îți dai consimțământul.</p>
                 </div>
             </li>
             <li class="perm-item">
@@ -242,7 +248,8 @@
         <ul>
             <li><strong>Cereri imagini OSM</strong> — când deschizi vizualizarea hărții, imaginile sunt preluate de pe serverele OpenStreetMap. Acestea sunt cereri HTTP GET standard; serverele OSM pot înregistra adresa ta IP conform propriei politici de confidențialitate.</li>
             <li><strong>Interogări de rutare OSRM</strong> — când navigarea pe hartă este activă, punctele de trecere sunt trimise unei instanțe OSRM pentru calculul rutelor.</li>
-            <li><strong>Cereri de reclame AdMob</strong> — când reclamele sunt încărcate, Google AdMob primește semnale despre dispozitiv și context (vezi Secțiunea 5).</li>
+            <li><strong>Cereri de reclame AdMob</strong> — când reclamele sunt încărcate, Google AdMob primește semnale despre dispozitiv și context (vezi Secțiunea 5). Doar după consimțământ.</li>
+            <li><strong>Evenimente de analiză</strong> — evenimente anonime din aplicație și informații despre dispozitiv sunt trimise către Google Analytics pentru Firebase (vezi Secțiunea 5b). Doar după consimțământ; dezactivate implicit.</li>
             <li><strong>Emailuri cu rapoarte de erori</strong> — doar dacă alegi manual să trimiți unul din Setări → Rapoarte de erori.</li>
             <li><strong>Lansarea aplicațiilor externe</strong> — deschiderea unei locații în Google Maps sau o aplicație similară este inițiată în întregime de acțiunea ta.</li>
         </ul>
@@ -260,13 +267,30 @@
             <li><strong>Consimțământ refuzat</strong> — AdMob afișează reclame contextuale (nepersonalizate). Unele semnale contextuale (contextul aplicației, locația generală) sunt totuși folosite.</li>
         </ul>
         <div class="callout info">
-            <span class="callout-icon">🔄</span>
+            <span class="callout-icon">🔁</span>
             <div class="callout-body">
                 <strong>Modificarea consimțământului</strong>
                 Poți revizui și reseta consimțământul GDPR oricând prin <strong>Setări → Despre → Resetare consimțământ</strong> din aplicație. Dialogul de consimțământ va reapărea la următoarea lansare a aplicației.
             </div>
         </div>
         <p>Pentru practicile complete de date ale Google, vezi: <a href="https://policies.google.com/privacy" target="_blank">Politica de confidențialitate Google</a> și <a href="https://support.google.com/admob/answer/6128543" target="_blank">Informații privind datele AdMob</a>.</p>
+    </section>
+
+    <section class="section" id="s5b">
+        <div class="section-header">
+            <div class="section-num">5b</div>
+            <h2>Analiză &amp; consimțământ</h2>
+        </div>
+        <p>Metrou București folosește <strong>Google Analytics pentru Firebase</strong> pentru a colecta statistici anonime și agregate despre modul în care este folosită aplicația (de exemplu ce funcții sunt deschise și cât de des). Acest lucru ne ajută să prioritizăm îmbunătățirile. Nu o folosim pentru a te identifica personal sau pentru a construi profiluri publicitare.</p>
+        <div class="callout good">
+            <span class="callout-icon">✅</span>
+            <div class="callout-body">
+                <strong>Dezactivat implicit — întâi consimțământul</strong>
+                Colectarea pentru analiză este dezactivată implicit și se activează doar după ce acorzi consimțământul prin același dialog de consimțământ GDPR (UMP-ul Google). Aceeași alegere care controlează reclamele controlează și analiza: dacă refuzi, nu se colectează date de analiză. Acest lucru este aplicat în aplicație și prin semnalele consent-mode ale Google.
+            </div>
+        </div>
+        <p><strong>Colectate doar după consimțământ:</strong> evenimente din aplicație și vizualizări de ecrane, numărul de sesiuni, model dispozitiv, versiune OS și aplicație, limbă/țară și locație aproximativă (bazată pe IP, la nivel de oraș). <strong>Niciodată colectate:</strong> numele tău, emailul, GPS-ul precis sau notele/favoritele tale locale.</p>
+        <p>Vezi <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy &amp; Security</a> pentru practicile de date ale Google.</p>
     </section>
 
     <section class="section" id="s6">
@@ -280,10 +304,11 @@
             <li>Notele despre stații și favoritele pot fi șterse individual din aplicație</li>
             <li>Toate datele locale sunt șterse permanent când dezinstalezi Metrou București</li>
         </ul>
-        <h3>Date AdMob</h3>
+        <h3>Date AdMob &amp; analiză</h3>
         <ul>
             <li>Gestionate de Google conform politicilor lor de păstrare a datelor</li>
             <li>Poți reseta ID-ul publicitar oricând prin Setări Android</li>
+            <li>Refuzarea sau resetarea consimțământului oprește personalizarea reclamelor și colectarea pentru analiză</li>
         </ul>
         <h3>Rapoarte de erori</h3>
         <ul>
@@ -299,9 +324,9 @@
         </div>
         <ul>
             <li><strong>Acces la locație</strong> — acordă sau revocă din Setări Android → Aplicații → Metrou București → Permisiuni</li>
-            <li><strong>Personalizarea reclamelor</strong> — dezactivează din Setări Android → Google → Reclame, sau resetează consimțământul din aplicație</li>
+            <li><strong>Personalizarea reclamelor și analiza</strong> — dezactivează din Setări Android → Google → Reclame, sau resetează consimțământul din aplicație (acest lucru dezactivează și analiza)</li>
             <li><strong>Rapoarte de erori</strong> — vizualizează, trimite sau șterge rapoarte individuale din Setări → Rapoarte de erori</li>
-            <li><strong>Toate datele aplicației</strong> — șterge din Setări Android → Aplicații → Metrou București → Stocare → Ștergere date, sau dezinstalând</li>
+            <li><strong>Toate datele aplicației</strong> — șterge din Setări Android → Aplicații → Metrou București → Stocare → ștergere date, sau dezinstalând</li>
         </ul>
     </section>
 
@@ -312,7 +337,7 @@
         </div>
         <ul>
             <li>Toate datele locale sunt protejate prin mecanismul standard de izolare a aplicațiilor Android</li>
-            <li>Conexiunile la OSM și AdMob folosesc HTTPS/TLS</li>
+            <li>Conexiunile la OSM, AdMob și Firebase folosesc HTTPS/TLS</li>
             <li>Nu sunt colectate sau stocate date personale sensibile (parole, informații financiare, date de sănătate)</li>
             <li>Aplicația nu implementează propriile conturi de utilizator sau autentificare</li>
         </ul>
