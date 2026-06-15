@@ -78,6 +78,7 @@
         .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-family: 'Outfit', sans-serif; font-weight: 600; }
         .tag.local  { background: rgba(56,142,60,0.12); color: #2e7d32; }
         .tag.admob  { background: rgba(255,152,0,0.12); color: #e65100; }
+        .tag.analytics { background: rgba(103,58,183,0.12); color: #5e35b1; }
         .tag.never  { background: var(--teal-pale); color: var(--teal-dark); }
         footer { background: var(--navy); color: rgba(255,255,255,0.55); padding: 40px 24px; text-align: center; }
         footer .footer-brand { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 1rem; color: var(--white); margin-bottom: 8px; }
@@ -94,10 +95,10 @@
 <div class="line-strip"></div>
 
 <header>
-    <div class="header-icon">🔒</div>
+    <div class="header-icon">🛡️</div>
     <h1>Politica de confidențialitate</h1>
     <p class="header-meta">Metrou București — Aplicație Android</p>
-    <div class="header-badge">🛡️ Ultima actualizare: Martie 2026</div>
+    <div class="header-badge">🛡️ Ultima actualizare: Iunie 2026</div>
 </header>
 
 <nav class="nav-bar">
@@ -115,7 +116,7 @@
         <span class="callout-icon">✅</span>
         <div class="callout-body">
             <strong>Pe scurt</strong>
-            Aproape toate datele rămân pe dispozitivul tău. Nu colectăm date personale, nu rulăm analize și nu vindem date. Singura procesare de date de către terți vine de la Google AdMob (pentru reclame), care necesită consimțământul tău GDPR înainte de activare.
+            Aproape toate datele rămân pe dispozitivul tău. Nu vindem date. Singura procesare de date de către terți vine de la serviciile Google — Google AdMob (pentru reclame) și Google Analytics pentru Firebase (pentru statistici anonime de utilizare) — ambele se activează doar <em>după</em> ce acorzi consimțământul GDPR la prima lansare. Dacă refuzi, analiza rămâne dezactivată.
         </div>
     </div>
 
@@ -125,6 +126,7 @@
             <li><a href="#s1">Ce date folosește aplicația</a></li>
             <li><a href="#s2">Stocare locală</a></li>
             <li><a href="#s3">Publicitate &amp; AdMob</a></li>
+            <li><a href="#s3b">Analiză (Analytics)</a></li>
             <li><a href="#s4">Permisiuni</a></li>
             <li><a href="#s5">Integrări cu terți</a></li>
             <li><a href="#s6">Partajarea datelor</a></li>
@@ -153,6 +155,8 @@
                 <tr><td>Rapoarte de erori</td><td>Depanare (email opt-in)</td><td><span class="tag local">Local până trimiți</span></td></tr>
                 <tr><td>ID publicitar</td><td>Reclame personalizate (necesită consimțământ)</td><td><span class="tag admob">Google AdMob</span></td></tr>
                 <tr><td>Informații dispozitiv / OS</td><td>Targetare reclame (necesită consimțământ)</td><td><span class="tag admob">Google AdMob</span></td></tr>
+                <tr><td>Evenimente de utilizare a aplicației</td><td>Statistici anonime de utilizare (necesită consimțământ)</td><td><span class="tag analytics">Google Analytics pentru Firebase</span></td></tr>
+                <tr><td>Locație aproximativă (bazată pe IP)</td><td>Context analiză și reclame (necesită consimțământ)</td><td><span class="tag analytics">Google Analytics pentru Firebase</span></td></tr>
                 <tr><td>Sănătate, contacte, mesaje</td><td>—</td><td><span class="tag never">Niciodată colectate</span></td></tr>
             </tbody>
         </table>
@@ -203,13 +207,36 @@
             <li>Date de interacțiune cu reclamele (afișări, clicuri)</li>
         </ul>
         <p>Pentru detalii complete, vezi <a href="https://policies.google.com/privacy" target="_blank">Politica de confidențialitate Google</a> și <a href="https://support.google.com/admob/answer/6128543" target="_blank">practicile de date AdMob</a>.</p>
+    </section>
 
-        <h3>Dezactivare sau resetare</h3>
+    <section class="section" id="s3b">
+        <div class="section-header">
+            <div class="section-num">3b</div>
+            <h2>Analiză (Google Analytics pentru Firebase)</h2>
+        </div>
+        <p>Pentru a înțelege cum este folosită aplicația și pentru a o îmbunătăți, folosim <strong>Google Analytics pentru Firebase</strong>, un serviciu oferit de Google. Analiza colectează date de utilizare anonime și agregate — nu te identifică personal și nu o folosim pentru a construi profiluri publicitare.</p>
+
+        <div class="callout good">
+            <span class="callout-icon">✅</span>
+            <div class="callout-body">
+                <strong>Întâi consimțământul — dezactivat implicit</strong>
+                Colectarea pentru analiză este <strong>dezactivată implicit</strong> și se activează doar <em>după</em> ce acorzi consimțământul prin formularul de consimțământ GDPR (UMP-ul Google) la prima lansare. Dacă refuzi, sau cât timp consimțământul nu a fost încă acordat, nu se colectează date de analiză. Acest lucru este aplicat atât în aplicație, cât și prin semnalele consent-mode ale Google.
+            </div>
+        </div>
+
+        <h3>Ce poate colecta analiza (doar dacă ai consimțit)</h3>
         <ul>
-            <li>Android 12+: <strong>Setări → Confidențialitate → Reclame → Ștergere ID publicitar</strong></li>
-            <li>Android mai vechi: <strong>Setări → Google → Reclame → Dezactivare personalizare reclame</strong></li>
-            <li>Sau vizitează <a href="https://www.google.com/settings/ads" target="_blank">Setări reclame Google</a></li>
+            <li>Evenimente din aplicație și vizualizări de ecrane (ex. ce funcții sunt deschise)</li>
+            <li>Numărul de sesiuni, durata sesiunilor și evenimente de deschidere/închidere a aplicației</li>
+            <li>Model dispozitiv, versiune OS, versiune aplicație, limbă și țară</li>
+            <li>Locație aproximativă (derivată din IP — la nivel de oraș/regiune, nu GPS precis)</li>
+            <li>Un identificator nepermanent al instanței aplicației, generat de Firebase</li>
         </ul>
+        <p><strong>Nu</strong> colectăm prin analiză numele, emailul, locația GPS precisă sau conținutul stocat local (note, favorite).</p>
+
+        <h3>Modificarea alegerii tale</h3>
+        <p>Poți retrage sau reseta consimțământul oricând prin <strong>Setări → Despre → Resetare consimțământ</strong>. Când refuzi, colectarea pentru analiză se oprește.</p>
+        <p>Pentru practicile de date ale Google, vezi <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy &amp; Security</a> și <a href="https://policies.google.com/privacy" target="_blank">Politica de confidențialitate Google</a>.</p>
     </section>
 
     <section class="section" id="s4">
@@ -219,8 +246,8 @@
         </div>
         <ul>
             <li><strong>ACCESS_FINE_LOCATION / ACCESS_COARSE_LOCATION</strong> — opțional; folosit pentru urmărirea traseului și găsirea stațiilor apropiate. Acordat și revocabil de tine oricând în Setări Android.</li>
-            <li><strong>INTERNET</strong> — necesar pentru a încărca imaginile hărții OSM și pentru a afișa reclame AdMob.</li>
-            <li><strong>AD_ID</strong> — necesar conform politicii Google Play când AdMob este prezent; folosit doar dacă consimți la reclame personalizate.</li>
+            <li><strong>INTERNET</strong> — necesar pentru a încărca imaginile hărții OSM, pentru a afișa reclame AdMob și pentru a trimite evenimente de analiză (după consimțământ).</li>
+            <li><strong>AD_ID</strong> — necesar conform politicii Google Play când AdMob este prezent; folosit de AdMob și de analiză doar dacă consimți.</li>
             <li><strong>POST_NOTIFICATIONS</strong> (Android 13+) — opțional; solicitat doar pentru notificările serviciului de prim-plan pentru urmărirea traseului.</li>
         </ul>
     </section>
@@ -231,6 +258,8 @@
             <h2>Integrări cu terți</h2>
         </div>
         <ul>
+            <li><strong>Google AdMob</strong> — livrarea reclamelor și gestionarea consimțământului GDPR (după consimțământ).</li>
+            <li><strong>Google Analytics pentru Firebase</strong> — analiză anonimă de utilizare (după consimțământ).</li>
             <li><strong>OpenStreetMap (OSM)</strong> — imaginile hărții sunt încărcate de pe serverele OSM când folosești vizualizarea hărții. Serverele OSM primesc o cerere HTTP standard care include adresa ta IP.</li>
             <li><strong>OSRM</strong> — interogări de rutare open-source pentru funcția de navigare pe hartă.</li>
             <li><strong>Aplicații externe de hartă</strong> (Google Maps, Waze, etc.) — lansate la cererea ta explicită când deschizi o locație extern.</li>
@@ -246,6 +275,7 @@
         <p>Nu vindem, tranzacționăm sau închiriem informațiile tale personale niciunei terțe părți. Singurele date care părăsesc dispozitivul tău sunt:</p>
         <ul>
             <li>Semnale legate de reclame trimise Google AdMob (doar după consimțământ)</li>
+            <li>Evenimente anonime de utilizare trimise către Google Analytics pentru Firebase (doar după consimțământ)</li>
             <li>Cereri HTTP la serverele de imagini și rutare OSM/OSRM (înregistrare standard a IP-ului de către acele servere)</li>
             <li>Emailuri cu rapoarte de erori — trimise doar dacă le inițiezi manual</li>
         </ul>
@@ -257,9 +287,9 @@
             <h2>Drepturile și controalele tale</h2>
         </div>
         <ul>
-            <li><strong>Acces și ștergere</strong> — toate datele tale sunt pe dispozitivul tău; șterge-le din Setări Android → Aplicații → Metrou București → Ștergere date, sau dezinstalând aplicația.</li>
+            <li><strong>Acces și ștergere</strong> — toate datele tale sunt pe dispozitivul tău; șterge-le din Setări Android → Aplicații → Metrou București → ștergere date, sau dezinstalând aplicația.</li>
             <li><strong>Locație</strong> — revocă oricând din Setări Android → Aplicații → Metrou București → Permisiuni.</li>
-            <li><strong>Consimțământ reclame</strong> — resetează prin Setări → Despre → Resetare consimțământ din aplicație.</li>
+            <li><strong>Consimțământ reclame și analiză</strong> — resetează prin Setări → Despre → Resetare consimțământ din aplicație. Refuzul oprește atât reclamele personalizate, cât și colectarea pentru analiză.</li>
             <li><strong>Rapoarte de erori</strong> — stocate local; tu decizi dacă trimiți fiecare. Șterge-le din Setări → Rapoarte de erori.</li>
         </ul>
     </section>
