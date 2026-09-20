@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politica de utilizare a datelor — Metrou București</title>
+    <title>Politica de utilizare a datelor | Metrou București</title>
     <meta name="description" content="Politica de utilizare a datelor pentru aplicația Android Metrou București">
     <link rel="canonical" href="https://metroubucuresti.ro/metrou-bucuresti-data-usage.html">
     <link rel="alternate" hreflang="ro" href="https://metroubucuresti.ro/metrou-bucuresti-data-usage.html">
@@ -71,13 +71,14 @@
         .callout.good  .callout-body strong { color: #2e7d32; }
         .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0; }
         .card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
-        .card-icon { font-size: 1.5rem; margin-bottom: 10px; }
         .card-title { font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
         .card-body { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
         .perm-list { list-style: none; padding: 0; margin: 16px 0; }
         .perm-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
         .perm-item:last-child { border-bottom: none; }
-        .perm-badge { flex-shrink: 0; padding: 3px 10px; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 600; }
+        /* Lățime fixă, astfel încât numele și descrierea fiecărui rând să
+           înceapă pe aceeași linie verticală, indiferent de textul etichetei. */
+        .perm-badge { flex-shrink: 0; width: 104px; text-align: center; padding: 3px 8px; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 600; line-height: 1.35; }
         .perm-badge.required { background: rgba(26,26,46,0.08); color: var(--navy); }
         .perm-badge.optional { background: var(--teal-pale); color: var(--teal-dark); }
         .perm-info { flex: 1; }
@@ -100,8 +101,8 @@
 <header>
     <div class="header-icon">📱</div>
     <h1>Politica de utilizare a datelor</h1>
-    <p class="header-meta">Metrou București — Aplicație Android</p>
-    <div class="header-badge">📱 Ultima actualizare: Iunie 2026</div>
+    <p class="header-meta">Metrou București, aplicație Android</p>
+    <div class="header-badge">📱 Ultima actualizare: Septembrie 2026</div>
 </header>
 
 <nav class="nav-bar">
@@ -119,7 +120,7 @@
         <span class="callout-icon">✅</span>
         <div class="callout-body">
             <strong>Pe scurt</strong>
-            Aplicația procesează aproape totul local pe dispozitivul tău. Singurele fluxuri de date externe sunt cererile pentru imaginile hărții (OpenStreetMap) și — dacă îți dai acordul — semnale pentru reclame către Google AdMob și statistici anonime de utilizare către Google Analytics pentru Firebase. Ambele servicii Google rămân dezactivate până când acorzi consimțământul GDPR, iar noi nu colectăm date personale care să te identifice direct.
+            Aplicația procesează aproape totul local pe dispozitivul tău, iar harta este inclusă în aplicație, deci se afișează fără nicio cerere în rețea. Datele părăsesc dispozitivul doar când o funcție are nevoie de un răspuns din exterior: căutarea de adrese și numele străzilor, traseele pe jos, timpii de sosire în timp real, rapoartele despre toalete și alertele de trafic ajung fiecare la un furnizor extern. Dacă îți dai acordul, semnale pentru reclame și statistici anonime de utilizare merg și către serviciile de publicitate și de analiză ale Google; ambele rămân dezactivate până acorzi consimțământul GDPR. Noi nu colectăm date personale care să te identifice direct.
         </div>
     </div>
 
@@ -132,6 +133,7 @@
             <li><a href="#s4">Fluxuri externe de date</a></li>
             <li><a href="#s5">Google AdMob &amp; GDPR</a></li>
             <li><a href="#s5b">Analiză &amp; consimțământ</a></li>
+            <li><a href="#s5c">Date despre achiziții și PRO</a></li>
             <li><a href="#s6">Păstrarea și ștergerea datelor</a></li>
             <li><a href="#s7">Controalele tale</a></li>
             <li><a href="#s8">Securitate</a></li>
@@ -147,39 +149,48 @@
         </div>
         <div class="cards">
             <div class="card">
-                <div class="card-icon">📍</div>
                 <p class="card-title">Locație (opțional)</p>
-                <p class="card-body">Coordonate GPS pentru urmărirea traseului și găsirea stațiilor de metrou apropiate. Procesate pe dispozitiv în timp real; niciodată înregistrate sau transmise.</p>
+                <p class="card-body">Coordonate GPS, folosite pentru urmărirea traseului și găsirea stațiilor de metrou apropiate. Procesate pe dispozitivul tău, fără a fi înregistrate sau transmise către noi. Excepția este căutarea de adrese și aflarea numelui străzii: dacă folosești funcția, interogarea este gestionată de un serviciu extern de hartă.</p>
             </div>
             <div class="card">
-                <div class="card-icon">📝</div>
                 <p class="card-title">Conținut creat de utilizator</p>
-                <p class="card-body">Notele despre stații și rutele favorite pe care le creezi. Stocate exclusiv în memoria locală a aplicației de pe dispozitivul tău.</p>
+                <p class="card-body">Notele despre stații și rutele favorite pe care le creezi. Stocate pe dispozitivul tău.</p>
             </div>
             <div class="card">
-                <div class="card-icon">⚙️</div>
                 <p class="card-title">Preferințele aplicației</p>
-                <p class="card-body">Temă, limbă, dimensiunea fontului și comportamentul de urmărire a traseului. Salvate local prin Android SharedPreferences.</p>
+                <p class="card-body">Temă, limbă, dimensiunea fontului și comportamentul de urmărire a traseului. Stocate pe dispozitivul tău.</p>
             </div>
             <div class="card">
-                <div class="card-icon">🐞</div>
                 <p class="card-title">Rapoarte de erori (opt-in)</p>
-                <p class="card-body">Dacă aplicația se blochează, un raport este salvat local. Este trimis numai dacă alegi explicit să îl trimiți prin email din Setări.</p>
+                <p class="card-body">Dacă aplicația se blochează, un raport este salvat pe dispozitivul tău. Ajunge la noi doar dacă alegi explicit să îl trimiți din Setări.</p>
             </div>
             <div class="card">
-                <div class="card-icon">📢</div>
                 <p class="card-title">Semnale pentru reclame (consimțământ)</p>
-                <p class="card-body">Google AdMob colectează ID-ul publicitar și informații despre dispozitiv pentru targetarea reclamelor doar după ce acorzi consimțământul GDPR la prima lansare.</p>
+                <p class="card-body">Serviciul de publicitate al Google colectează un identificator publicitar și informații despre dispozitiv pentru targetarea reclamelor, doar după ce acorzi consimțământul GDPR.</p>
             </div>
             <div class="card">
-                <div class="card-icon">📊</div>
                 <p class="card-title">Evenimente de analiză (consimțământ)</p>
-                <p class="card-body">Google Analytics pentru Firebase colectează evenimente anonime din aplicație, vizualizări de ecrane și informații despre dispozitiv doar după ce acorzi consimțământul GDPR. Dezactivat implicit.</p>
+                <p class="card-body">Serviciul de analiză al Google colectează evenimente anonime din aplicație, vizualizări de ecrane și informații despre dispozitiv, doar după ce acorzi consimțământul GDPR. Dezactivat implicit.</p>
             </div>
             <div class="card">
-                <div class="card-icon">🗺️</div>
-                <p class="card-title">Cereri de imagini hartă</p>
-                <p class="card-body">Cereri HTTP standard către serverele OpenStreetMap și OSRM când folosești vizualizarea hărții. Adresa ta IP este vizibilă pentru acele servere.</p>
+                <p class="card-title">Interogări de hartă și căutare</p>
+                <p class="card-body">Harta este inclusă în aplicație și nu are nevoie de rețea. Căutarea unei adrese, aflarea numelui străzii sau desenarea unui traseu pe jos trimit acea interogare, împreună cu adresa ta IP, către un serviciu extern de hartă sau de rutare.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">Rapoarte despre toalete</p>
+                <p class="card-body">Citirea stării toaletelor nu trimite nimic despre tine. Trimiterea unui raport transmite stația, starea aleasă, momentul și nota scrisă de tine, fără niciun identificator atașat.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">Timpi de sosire în timp real</p>
+                <p class="card-body">Stația ai cărei timpi îi consulți este trimisă către un furnizor extern de date despre transport pentru a prelua următoarele sosiri.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">Validarea rapoartelor</p>
+                <p class="card-body">Trimiterea unui raport despre o toaletă implică o verificare de integritate Google care confirmă că raportul vine de la o instalare autentică a aplicației. Nu conține cont sau date personale, iar noi nu o stocăm. Trimiterile care nu trec verificarea sunt respinse.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">Notificări despre incidente (opționale)</p>
+                <p class="card-body">Dezactivate implicit. Dacă le activezi din Setări, notificările sunt livrate prin serviciul de mesagerie al Google. Aceeași notificare ajunge la toți cei care le au activate, așa că nimic care să te identifice nu ajunge la noi și nu este stocat. Dezactivarea oprește livrarea.</p>
             </div>
         </div>
     </section>
@@ -194,7 +205,7 @@
                 <span class="perm-badge required">Necesar</span>
                 <div class="perm-info">
                     <p class="perm-name">INTERNET</p>
-                    <p class="perm-desc">Necesar pentru a încărca imaginile OpenStreetMap, pentru a afișa reclame AdMob și pentru a trimite evenimente de analiză (după consimțământ).</p>
+                    <p class="perm-desc">Necesar pentru căutarea de adrese, trasee pe jos, orare în timp real, starea toaletelor și alertele de trafic, precum și pentru afișarea reclamelor AdMob și trimiterea evenimentelor de analiză (după consimțământ). Harta funcționează offline.</p>
                 </div>
             </li>
             <li class="perm-item">
@@ -205,7 +216,7 @@
                 </div>
             </li>
             <li class="perm-item">
-                <span class="perm-badge required">Necesar (politică Play)</span>
+                <span class="perm-badge required">Necesar</span>
                 <div class="perm-info">
                     <p class="perm-name">AD_ID</p>
                     <p class="perm-desc">Declarat ca necesar de Google Play când AdMob este integrat. Folosit de AdMob și de analiză doar dacă îți dai consimțământul.</p>
@@ -215,7 +226,7 @@
                 <span class="perm-badge optional">Opțional</span>
                 <div class="perm-info">
                     <p class="perm-name">POST_NOTIFICATIONS (Android 13+)</p>
-                    <p class="perm-desc">Solicitat doar când pornești urmărirea traseului; utilizat pentru a afișa notificarea serviciului de prim-plan care arată progresul călătoriei tale curente.</p>
+                    <p class="perm-desc">Utilizat pentru a arăta progresul călătoriei cât timp urmărirea traseului rulează și, dacă le activezi, pentru a livra notificările despre incidente în transport. Notificările despre incidente sunt dezactivate implicit și se activează din Setări.</p>
                 </div>
             </li>
         </ul>
@@ -228,7 +239,7 @@
         </div>
         <p>Următoarele funcționalități operează în întregime pe dispozitivul tău fără nicio comunicare de rețea:</p>
         <ul>
-            <li>Planificarea rutelor și calculul transferurilor pe liniile M1–M5</li>
+            <li>Planificarea rutelor și calculul transferurilor pe liniile M1-M5</li>
             <li>Căutarea orarelor și calculul trenului următor</li>
             <li>Căutarea stațiilor și filtrarea liniilor</li>
             <li>Indicatori pentru direcția de deschidere a ușilor</li>
@@ -246,12 +257,18 @@
         </div>
         <p>Acestea sunt singurele situații în care datele părăsesc dispozitivul tău:</p>
         <ul>
-            <li><strong>Cereri imagini OSM</strong> — când deschizi vizualizarea hărții, imaginile sunt preluate de pe serverele OpenStreetMap. Acestea sunt cereri HTTP GET standard; serverele OSM pot înregistra adresa ta IP conform propriei politici de confidențialitate.</li>
-            <li><strong>Interogări de rutare OSRM</strong> — când navigarea pe hartă este activă, punctele de trecere sunt trimise unei instanțe OSRM pentru calculul rutelor.</li>
-            <li><strong>Cereri de reclame AdMob</strong> — când reclamele sunt încărcate, Google AdMob primește semnale despre dispozitiv și context (vezi Secțiunea 5). Doar după consimțământ.</li>
-            <li><strong>Evenimente de analiză</strong> — evenimente anonime din aplicație și informații despre dispozitiv sunt trimise către Google Analytics pentru Firebase (vezi Secțiunea 5b). Doar după consimțământ; dezactivate implicit.</li>
-            <li><strong>Emailuri cu rapoarte de erori</strong> — doar dacă alegi manual să trimiți unul din Setări → Rapoarte de erori.</li>
-            <li><strong>Lansarea aplicațiilor externe</strong> — deschiderea unei locații în Google Maps sau o aplicație similară este inițiată în întregime de acțiunea ta.</li>
+            <li><strong>Căutarea de adrese</strong>: textul pe care îl scrii într-un câmp de destinație este trimis către un serviciu extern de hartă pentru a găsi locurile potrivite.</li>
+            <li><strong>Aflarea numelui străzii</strong>: când aplicația îți arată strada pe care te afli, coordonatele tale GPS sunt trimise către un serviciu extern de hartă. Este singura funcție care transmite poziția ta exactă, și doar cât timp o folosești.</li>
+            <li><strong>Trasee pe jos</strong>: când se desenează un traseu pe jos, punctele de start și de final sunt trimise către un serviciu extern de rutare.</li>
+            <li><strong>Starea toaletelor</strong>: datele partajate sunt citite din o bază de date cloud Google. Dacă trimiți un raport, sunt transmise stația, starea selectată, momentul și nota ta opțională. Nu se atașează cont, identificator de dispozitiv sau locație.</li>
+            <li><strong>Validarea rapoartelor</strong>: trimiterea unui raport despre o toaletă implică o verificare de integritate Google care confirmă că trimiterea vine de la o instalare autentică. Nu conține cont sau date personale, iar noi nu o stocăm.</li>
+            <li><strong>Notificări despre incidente</strong>: dacă le activezi, notificările sunt livrate prin serviciul de mesagerie al Google. Aceeași notificare ajunge la toți cei care le au activate, așa că nimic care să te identifice nu ajunge la noi. Dezactivarea oprește livrarea.</li>
+            <li><strong>Timpi de sosire în timp real</strong>: stația ai cărei timpi îi consulți este trimisă către un furnizor extern de date despre transport.</li>
+            <li><strong>Alerte de trafic</strong>: aplicația solicită lista curentă de alerte, noutăți și evenimente de la un furnizor extern și nu trimite nimic despre tine.</li>
+            <li><strong>Cereri de reclame</strong>: când reclamele sunt încărcate, serviciul de publicitate al Google primește semnale despre dispozitiv și context (vezi Secțiunea 5), și doar după consimțământ.</li>
+            <li><strong>Evenimente de analiză</strong>: evenimente anonime din aplicație și informații despre dispozitiv sunt trimise către serviciul de analiză al Google (vezi Secțiunea 5b), doar după consimțământ și dezactivate implicit.</li>
+            <li><strong>Emailuri cu rapoarte de erori</strong>: doar dacă alegi manual să trimiți unul din Setări → Rapoarte de erori.</li>
+            <li><strong>Lansarea aplicațiilor externe</strong>: deschiderea unei locații într-o aplicație de hartă este inițiată în întregime de acțiunea ta.</li>
         </ul>
     </section>
 
@@ -263,8 +280,8 @@
         <p>Metrou București folosește Google AdMob pentru a afișa reclame banner. AdMob este supus politicilor de confidențialitate Google și cerințelor GDPR din UE.</p>
         <p>La prima lansare, aplicația afișează un dialog de consimțământ GDPR prin Platforma de mesagerie pentru utilizatori (UMP) a Google. Opțiunile tale:</p>
         <ul>
-            <li><strong>Consimțământ acordat</strong> — AdMob poate afișa reclame personalizate folosind ID-ul tău publicitar, modelul dispozitivului, sistemul de operare, tipul de rețea și locația aproximativă.</li>
-            <li><strong>Consimțământ refuzat</strong> — AdMob afișează reclame contextuale (nepersonalizate). Unele semnale contextuale (contextul aplicației, locația generală) sunt totuși folosite.</li>
+            <li><strong>Consimțământ acordat</strong>: AdMob poate afișa reclame personalizate folosind ID-ul tău publicitar, modelul dispozitivului, sistemul de operare, tipul de rețea și locația aproximativă.</li>
+            <li><strong>Consimțământ refuzat</strong>: AdMob afișează reclame contextuale (nepersonalizate). Unele semnale contextuale, precum contextul aplicației și locația generală, sunt totuși folosite.</li>
         </ul>
         <div class="callout info">
             <span class="callout-icon">🔁</span>
@@ -285,12 +302,26 @@
         <div class="callout good">
             <span class="callout-icon">✅</span>
             <div class="callout-body">
-                <strong>Dezactivat implicit — întâi consimțământul</strong>
+                <strong>Dezactivat implicit, întâi consimțământul</strong>
                 Colectarea pentru analiză este dezactivată implicit și se activează doar după ce acorzi consimțământul prin același dialog de consimțământ GDPR (UMP-ul Google). Aceeași alegere care controlează reclamele controlează și analiza: dacă refuzi, nu se colectează date de analiză. Acest lucru este aplicat în aplicație și prin semnalele consent-mode ale Google.
             </div>
         </div>
         <p><strong>Colectate doar după consimțământ:</strong> evenimente din aplicație și vizualizări de ecrane, numărul de sesiuni, model dispozitiv, versiune OS și aplicație, limbă/țară și locație aproximativă (bazată pe IP, la nivel de oraș). <strong>Niciodată colectate:</strong> numele tău, emailul, GPS-ul precis sau notele/favoritele tale locale.</p>
         <p>Vezi <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy &amp; Security</a> pentru practicile de date ale Google.</p>
+    </section>
+
+    <section class="section" id="s5c">
+        <div class="section-header">
+            <div class="section-num">5c</div>
+            <h2>Date despre achiziții și PRO</h2>
+        </div>
+        <p>Relevant doar dacă achiziționezi <strong>MetroBUC PRO</strong>, îmbunătățirea opțională contra cost care elimină toate reclamele. Se vinde fie ca abonament lunar, care se reînnoiește până îl anulezi din Google Play, fie ca plată unică, definitivă. Ambele elimină exact aceleași reclame.</p>
+        <ul>
+            <li><strong>Colectate de noi:</strong> dacă PRO este activ, păstrat exclusiv pe dispozitivul tău. Este același, indiferent care dintre cele două produse l-ai cumpărat.</li>
+            <li><strong>Gestionate de Google:</strong> achiziția propriu-zisă, inclusiv plata. Google Play procesează tranzacția conform propriei politici de confidențialitate.</li>
+            <li><strong>Transmise către noi:</strong> nimic. Nicio informație despre achiziția ta nu ajunge vreodată pe un server controlat de noi.</li>
+            <li><strong>Efect asupra datelor publicitare:</strong> cât timp PRO este activ, nu se afișează reclame, deci nu se colectează niciun identificator publicitar sau semnal legat de reclame.</li>
+        </ul>
     </section>
 
     <section class="section" id="s6">
@@ -315,6 +346,12 @@
             <li>Stocate local până le ștergi sau le trimiți prin email</li>
             <li>Gestionabile din Setări → Rapoarte de erori</li>
         </ul>
+        <h3>Verificarea trimiterilor și abonările la notificări</h3>
+        <ul>
+            <li>Verificările de integritate ale trimiterilor sunt folosite o singură dată pentru a valida un raport despre o toaletă și nu sunt stocate niciodată de noi</li>
+            <li>Rapoartele despre toalete rămân în datele partajate și nu pot fi retrase individual, fiindcă sunt anonime și nu pot fi legate de cine le-a trimis</li>
+            <li>Abonarea la notificările despre incidente durează până când dezactivezi acele notificări sau dezinstalezi aplicația</li>
+        </ul>
     </section>
 
     <section class="section" id="s7">
@@ -323,10 +360,11 @@
             <h2>Controalele tale</h2>
         </div>
         <ul>
-            <li><strong>Acces la locație</strong> — acordă sau revocă din Setări Android → Aplicații → Metrou București → Permisiuni</li>
-            <li><strong>Personalizarea reclamelor și analiza</strong> — dezactivează din Setări Android → Google → Reclame, sau resetează consimțământul din aplicație (acest lucru dezactivează și analiza)</li>
-            <li><strong>Rapoarte de erori</strong> — vizualizează, trimite sau șterge rapoarte individuale din Setări → Rapoarte de erori</li>
-            <li><strong>Toate datele aplicației</strong> — șterge din Setări Android → Aplicații → Metrou București → Stocare → ștergere date, sau dezinstalând</li>
+            <li><strong>Acces la locație</strong>: acordă sau revocă din Setări Android → Aplicații → Metrou București → Permisiuni</li>
+            <li><strong>Personalizarea reclamelor și analiza</strong>: dezactivează din Setări Android → Google → Reclame, sau resetează consimțământul din aplicație (acest lucru dezactivează și analiza)</li>
+            <li><strong>Notificări despre incidente</strong>: activează-le sau dezactivează-le din Setări. Sunt dezactivate implicit, iar dezactivarea oprește livrarea</li>
+            <li><strong>Rapoarte de erori</strong>: vizualizează, trimite sau șterge rapoarte individuale din Setări → Rapoarte de erori</li>
+            <li><strong>Toate datele aplicației</strong>: șterge din Setări Android → Aplicații → Metrou București → Stocare → ștergere date, sau dezinstalând</li>
         </ul>
     </section>
 
@@ -337,7 +375,7 @@
         </div>
         <ul>
             <li>Toate datele locale sunt protejate prin mecanismul standard de izolare a aplicațiilor Android</li>
-            <li>Conexiunile la OSM, AdMob și Firebase folosesc HTTPS/TLS</li>
+            <li>Toate conexiunile către servicii externe folosesc HTTPS/TLS</li>
             <li>Nu sunt colectate sau stocate date personale sensibile (parole, informații financiare, date de sănătate)</li>
             <li>Aplicația nu implementează propriile conturi de utilizator sau autentificare</li>
         </ul>
@@ -348,7 +386,7 @@
             <div class="section-num">09</div>
             <h2>Actualizări ale politicii</h2>
         </div>
-        <p>Vom actualiza această politică când practicile privind datele se schimbă semnificativ — de exemplu dacă sunt adăugate noi servicii terțe. Modificările sunt indicate prin data „Ultima actualizare" de mai sus. Utilizarea continuată a aplicației după data intrării în vigoare constituie acceptarea acestora.</p>
+        <p>Vom actualiza această politică când practicile privind datele se schimbă semnificativ, de exemplu dacă sunt adăugate noi servicii terțe. Modificările sunt indicate prin data „Ultima actualizare" de mai sus. Utilizarea continuată a aplicației după data intrării în vigoare constituie acceptarea acestora.</p>
     </section>
 
     <section class="section" id="s10">
@@ -358,7 +396,7 @@
         </div>
         <p>Pentru întrebări sau solicitări legate de date:</p>
         <ul>
-            <li><strong>Email:</strong> <a href="mailto:help@metroubucuresti.ro">help@metroubucuresti.ro</a></li>
+            <li><strong>Email:</strong> <a href="mailto:contact@metroubucuresti.ro">contact@metroubucuresti.ro</a></li>
             <li><strong>Din aplicație:</strong> Setări → Despre → Contact</li>
             <li><strong>Website:</strong> <a href="https://www.metroubucuresti.ro" target="_blank">www.metroubucuresti.ro</a></li>
         </ul>
@@ -370,11 +408,11 @@
     <p class="footer-brand">Metrou București</p>
     <p>Aplicație neoficială de navigare metrou pentru București · Android</p>
     <div class="footer-links">
-        <a href="mailto:help@metroubucuresti.ro">help@metroubucuresti.ro</a>
+        <a href="mailto:contact@metroubucuresti.ro">contact@metroubucuresti.ro</a>
         <a href="metrou-bucuresti-terms.html">Termeni și condiții</a>
         <a href="metrou-bucuresti-privacy.html">Politica de confidențialitate</a>
     </div>
-    <p class="footer-copyright">© 2024–2026 Metrou București. Toate drepturile rezervate.</p>
+    <p class="footer-copyright">© 2024-2026 Metrou București. Toate drepturile rezervate.</p>
 </footer>
 
 </body>
