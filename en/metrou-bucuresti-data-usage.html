@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Usage Policy — Metrou București</title>
+    <title>Data Usage Policy | Metrou București</title>
     <meta name="description" content="Data Usage Policy for the Metrou București Android application">
     <link rel="canonical" href="https://metroubucuresti.ro/en/metrou-bucuresti-data-usage.html">
     <link rel="alternate" hreflang="ro" href="https://metroubucuresti.ro/metrou-bucuresti-data-usage.html">
@@ -71,13 +71,14 @@
         .callout.good  .callout-body strong { color: #2e7d32; }
         .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0; }
         .card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
-        .card-icon { font-size: 1.5rem; margin-bottom: 10px; }
         .card-title { font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
         .card-body { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
         .perm-list { list-style: none; padding: 0; margin: 16px 0; }
         .perm-item { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
         .perm-item:last-child { border-bottom: none; }
-        .perm-badge { flex-shrink: 0; padding: 3px 10px; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 600; }
+        /* Fixed width so every row's name and description start on the same
+           vertical line, whatever the badge label says. */
+        .perm-badge { flex-shrink: 0; width: 104px; text-align: center; padding: 3px 8px; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 600; line-height: 1.35; }
         .perm-badge.required { background: rgba(26,26,46,0.08); color: var(--navy); }
         .perm-badge.optional { background: var(--teal-pale); color: var(--teal-dark); }
         .perm-info { flex: 1; }
@@ -100,8 +101,8 @@
 <header>
     <div class="header-icon">📱</div>
     <h1>Data Usage Policy</h1>
-    <p class="header-meta">Metrou București — Android Application</p>
-    <div class="header-badge">📱 Last updated: June 2026</div>
+    <p class="header-meta">Metrou București, Android Application</p>
+    <div class="header-badge">📱 Last updated: September 2026</div>
 </header>
 
 <nav class="nav-bar">
@@ -119,7 +120,7 @@
         <span class="callout-icon">✅</span>
         <div class="callout-body">
             <strong>The short version</strong>
-            The App processes almost everything locally on your device. The only external data flows are map tile requests (OpenStreetMap) and — if you consent — ad signals to Google AdMob and anonymous usage statistics to Google Analytics for Firebase. Both Google services stay off until you grant GDPR consent, and we collect no directly identifying personal information ourselves.
+            The App processes almost everything locally on your device, and the map is included in the App so it renders without any network request. Data leaves your device only when a feature needs an outside answer: address and street-name lookups, walking routes, live arrival times, toilet reports and service alerts each reach an external provider. If you consent, ad signals and anonymous usage statistics also go to Google's advertising and analytics services; both stay off until you grant GDPR consent. We collect no directly identifying personal information ourselves.
         </div>
     </div>
 
@@ -132,6 +133,7 @@
             <li><a href="#s4">External Data Flows</a></li>
             <li><a href="#s5">Google AdMob &amp; GDPR</a></li>
             <li><a href="#s5b">Analytics &amp; Consent</a></li>
+            <li><a href="#s5c">Purchase Data &amp; PRO</a></li>
             <li><a href="#s6">Data Retention &amp; Deletion</a></li>
             <li><a href="#s7">Your Controls</a></li>
             <li><a href="#s8">Security</a></li>
@@ -147,39 +149,48 @@
         </div>
         <div class="cards">
             <div class="card">
-                <div class="card-icon">📍</div>
                 <p class="card-title">Location (optional)</p>
-                <p class="card-body">GPS coordinates for route tracking and finding nearby metro stations. Processed on-device in real time; never logged or transmitted to us.</p>
+                <p class="card-body">GPS coordinates, used for route tracking and for finding nearby metro stations. Processed on your device and not logged or sent to us. The exception is the address and street-name lookup: if you use it, the query is handled by an external map service.</p>
             </div>
             <div class="card">
-                <div class="card-icon">📝</div>
                 <p class="card-title">User-created content</p>
-                <p class="card-body">Station notes and favourite routes you create. Stored entirely in local app storage on your device.</p>
+                <p class="card-body">Station notes and favourite routes you create. Stored on your device.</p>
             </div>
             <div class="card">
-                <div class="card-icon">⚙️</div>
                 <p class="card-title">App preferences</p>
-                <p class="card-body">Theme, language, font size, and route-tracking behaviour. Saved locally via Android SharedPreferences.</p>
+                <p class="card-body">Theme, language, font size and route-tracking behaviour. Stored on your device.</p>
             </div>
             <div class="card">
-                <div class="card-icon">🐞</div>
                 <p class="card-title">Crash reports (opt-in)</p>
-                <p class="card-body">If the app crashes, a report is saved locally. It is sent to us only if you explicitly choose to email it from Settings.</p>
+                <p class="card-body">If the app crashes, a report is saved on your device. It reaches us only if you explicitly choose to send it from Settings.</p>
             </div>
             <div class="card">
-                <div class="card-icon">📢</div>
                 <p class="card-title">Ad signals (consent)</p>
-                <p class="card-body">Google AdMob collects the Advertising ID and device info for ad targeting only after you grant GDPR consent on first launch.</p>
+                <p class="card-body">Google's advertising service collects an advertising identifier and device information for ad targeting, only after you grant GDPR consent.</p>
             </div>
             <div class="card">
-                <div class="card-icon">📊</div>
                 <p class="card-title">Analytics events (consent)</p>
-                <p class="card-body">Google Analytics for Firebase collects anonymous app events, screen views and device info only after you grant GDPR consent. Off by default.</p>
+                <p class="card-body">Google's analytics service collects anonymous app events, screen views and device information, only after you grant GDPR consent. Off by default.</p>
             </div>
             <div class="card">
-                <div class="card-icon">🗺️</div>
-                <p class="card-title">Map tile requests</p>
-                <p class="card-body">Standard HTTP requests to OpenStreetMap and OSRM servers when you use the map view. Your IP address is visible to those servers.</p>
+                <p class="card-title">Map and lookup queries</p>
+                <p class="card-body">The map is included in the App and needs no network. Searching an address, turning your position into a street name or drawing a walking route sends that query, along with your IP address, to an external map or routing service.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">Toilet reports</p>
+                <p class="card-body">Reading toilet status sends nothing about you. Submitting a report sends the station, the condition you chose, the time and any note you write, with no identifier attached.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">Live arrival times</p>
+                <p class="card-body">The stop whose times you are viewing is sent to an external transit data provider to fetch its next arrivals.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">Report validation</p>
+                <p class="card-body">Submitting a toilet report involves a Google integrity check confirming the report comes from a genuine install of the App. It carries no account or personal data, and we do not store it. Submissions that fail the check are rejected.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">Incident notifications (opt-in)</p>
+                <p class="card-body">Off by default. If you switch them on in Settings, notifications are delivered through Google's messaging service. The same notification goes to everyone who has them enabled, so nothing identifying you is sent to us or stored. Switching them off stops delivery.</p>
             </div>
         </div>
     </section>
@@ -194,7 +205,7 @@
                 <span class="perm-badge required">Required</span>
                 <div class="perm-info">
                     <p class="perm-name">INTERNET</p>
-                    <p class="perm-desc">Needed to load OpenStreetMap tiles, serve AdMob advertisements, and send analytics events (after consent).</p>
+                    <p class="perm-desc">Needed for address search, walking routes, live bus times, toilet status and service alerts, and to serve AdMob advertisements and analytics events (after consent). The map itself works offline.</p>
                 </div>
             </li>
             <li class="perm-item">
@@ -205,7 +216,7 @@
                 </div>
             </li>
             <li class="perm-item">
-                <span class="perm-badge required">Required (Play policy)</span>
+                <span class="perm-badge required">Required</span>
                 <div class="perm-info">
                     <p class="perm-name">AD_ID</p>
                     <p class="perm-desc">Declared as required by Google Play when AdMob is integrated. Used by AdMob and analytics only if you consent.</p>
@@ -215,7 +226,7 @@
                 <span class="perm-badge optional">Optional</span>
                 <div class="perm-info">
                     <p class="perm-name">POST_NOTIFICATIONS (Android 13+)</p>
-                    <p class="perm-desc">Requested only when you start route tracking; used to display the foreground-service notification showing your current journey progress.</p>
+                    <p class="perm-desc">Used to show your journey progress while route tracking is running, and to deliver transport incident notifications if you switch those on. Incident notifications are off by default and are enabled in Settings.</p>
                 </div>
             </li>
         </ul>
@@ -228,7 +239,7 @@
         </div>
         <p>The following features operate entirely on your device with no network communication:</p>
         <ul>
-            <li>Route planning and transfer calculation across M1–M5</li>
+            <li>Route planning and transfer calculation across M1-M5</li>
             <li>Timetable lookups and next-train calculations</li>
             <li>Station search and line filtering</li>
             <li>Door-opening direction indicators</li>
@@ -246,12 +257,18 @@
         </div>
         <p>The following are the only situations in which data leaves your device:</p>
         <ul>
-            <li><strong>OSM tile requests</strong> — when you open the map view, tile images are fetched from OpenStreetMap servers. These are standard HTTP GET requests; OSM servers may log your IP address per their own privacy policy.</li>
-            <li><strong>OSRM routing queries</strong> — when map-based navigation is active, waypoints are sent to an OSRM instance for routing calculations.</li>
-            <li><strong>AdMob ad requests</strong> — when ads are loaded, Google AdMob receives device and context signals (see Section 5). Only after consent.</li>
-            <li><strong>Analytics events</strong> — anonymous app events and device info are sent to Google Analytics for Firebase (see Section 5b). Only after consent; off by default.</li>
-            <li><strong>Crash report emails</strong> — only if you manually choose to send one from Settings → Crash Reporting.</li>
-            <li><strong>External app launches</strong> — opening a location in Google Maps or a similar app is initiated entirely by your tap.</li>
+            <li><strong>Address search</strong>: the text you type into a destination field is sent to an external map service to find matching places.</li>
+            <li><strong>Street name lookup</strong>: when the App shows the street you are currently on, your GPS coordinates are sent to an external map service. This is the only feature that transmits your precise position, and only while you are using it.</li>
+            <li><strong>Walking routes</strong>: when a walking route is drawn, its start and end points are sent to an external routing service.</li>
+            <li><strong>Toilet status</strong>: the shared toilet data is read from a Google cloud database. If you submit a report, the station, the condition you selected, the time and your optional note are sent. No account, device identifier or location is attached.</li>
+            <li><strong>Report validation</strong>: submitting a toilet report involves a Google integrity check confirming the submission comes from a genuine install. It carries no account or personal data, and we do not store it.</li>
+            <li><strong>Incident notifications</strong>: if you switch them on, notifications are delivered through Google's messaging service. The same notification goes to everyone who has them enabled, so nothing identifying you reaches us. Switching them off stops delivery.</li>
+            <li><strong>Live arrival times</strong>: the stop whose times you are viewing is sent to an external transit data provider.</li>
+            <li><strong>Service alerts</strong>: the App requests the current alerts, news and events list from an external provider and sends nothing about you.</li>
+            <li><strong>Ad requests</strong>: when ads are loaded, Google's advertising service receives device and context signals (see Section 5), and only after consent.</li>
+            <li><strong>Analytics events</strong>: anonymous app events and device information are sent to Google's analytics service (see Section 5b), only after consent and off by default.</li>
+            <li><strong>Crash report emails</strong>: only if you manually choose to send one from Settings → Crash Reporting.</li>
+            <li><strong>External app launches</strong>: opening a location in a map application is initiated entirely by your tap.</li>
         </ul>
     </section>
 
@@ -263,8 +280,8 @@
         <p>Metrou București uses Google AdMob to display banner advertisements. AdMob is subject to Google's privacy policies and EU GDPR requirements.</p>
         <p>On first launch the App shows a GDPR consent dialogue via Google's User Messaging Platform (UMP). Your choices:</p>
         <ul>
-            <li><strong>Consent granted</strong> — AdMob may show personalised ads using your Advertising ID, device model, OS, network type, and approximate location.</li>
-            <li><strong>Consent declined</strong> — AdMob shows contextual (non-personalised) ads. Some contextual signals (app context, general location) are still used.</li>
+            <li><strong>Consent granted</strong>: AdMob may show personalised ads using your Advertising ID, device model, OS, network type, and approximate location.</li>
+            <li><strong>Consent declined</strong>: AdMob shows contextual (non-personalised) ads. Some contextual signals, such as app context and general location, are still used.</li>
         </ul>
         <div class="callout info">
             <span class="callout-icon">🔁</span>
@@ -285,12 +302,26 @@
         <div class="callout good">
             <span class="callout-icon">✅</span>
             <div class="callout-body">
-                <strong>Off by default — consent first</strong>
+                <strong>Off by default, consent first</strong>
                 Analytics collection is disabled by default and only activates after you grant consent via the same GDPR consent dialogue (Google's UMP). The same choice that controls ads also controls analytics: if you decline, no analytics data is collected. This is enforced in the app and via Google's consent-mode signals.
             </div>
         </div>
         <p><strong>Collected only after consent:</strong> app events &amp; screen views, session counts, device model, OS and app version, language/country, and approximate (IP-based, city-level) location. <strong>Never collected:</strong> your name, email, precise GPS, or your local notes/favourites.</p>
         <p>See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy &amp; Security</a> for Google's data practices.</p>
+    </section>
+
+    <section class="section" id="s5c">
+        <div class="section-header">
+            <div class="section-num">5c</div>
+            <h2>Purchase Data &amp; PRO</h2>
+        </div>
+        <p>Only relevant if you buy <strong>MetroBUC PRO</strong>, the optional paid upgrade that removes all advertising. It is sold either as a monthly subscription, which renews until you cancel it in Google Play, or as a one-time purchase that is permanent. Both remove exactly the same ads.</p>
+        <ul>
+            <li><strong>Collected by us:</strong> whether PRO is active, kept on your device only. It is the same either way, whichever of the two products you bought.</li>
+            <li><strong>Handled by Google:</strong> the purchase itself, payment included. Google Play processes the transaction under its own privacy policy.</li>
+            <li><strong>Transmitted to us:</strong> nothing. No information about your purchase ever reaches a server we control.</li>
+            <li><strong>Effect on advertising data:</strong> while PRO is active, no ads are shown, so no advertising identifiers or ad-related signals are collected at all.</li>
+        </ul>
     </section>
 
     <section class="section" id="s6">
@@ -315,6 +346,12 @@
             <li>Stored locally until you delete them or send them via email</li>
             <li>Manageable from Settings → Crash Reporting</li>
         </ul>
+        <h3>Submission checks &amp; notification subscriptions</h3>
+        <ul>
+            <li>Integrity checks on submissions are used once to validate a toilet report and are never stored by us</li>
+            <li>Toilet reports themselves stay in the shared data and cannot be withdrawn individually, because they are anonymous and cannot be traced back to whoever submitted them</li>
+            <li>The incident notification subscription lasts until you turn those notifications off or uninstall the app</li>
+        </ul>
     </section>
 
     <section class="section" id="s7">
@@ -323,10 +360,11 @@
             <h2>Your Controls</h2>
         </div>
         <ul>
-            <li><strong>Location access</strong> — grant or revoke in Android Settings → Apps → Metrou București → Permissions</li>
-            <li><strong>Ad personalisation &amp; analytics</strong> — opt out via Android Settings → Google → Ads, or reset consent inside the app (this disables analytics too)</li>
-            <li><strong>Crash reports</strong> — view, send, or delete individual reports in Settings → Crash Reporting</li>
-            <li><strong>All app data</strong> — clear via Android Settings → Apps → Metrou București → Storage → Clear Data, or by uninstalling</li>
+            <li><strong>Location access</strong>: grant or revoke in Android Settings → Apps → Metrou București → Permissions</li>
+            <li><strong>Ad personalisation &amp; analytics</strong>: opt out via Android Settings → Google → Ads, or reset consent inside the app (this disables analytics too)</li>
+            <li><strong>Incident notifications</strong>: switch on or off in Settings. They are off by default, and switching them off stops delivery</li>
+            <li><strong>Crash reports</strong>: view, send, or delete individual reports in Settings → Crash Reporting</li>
+            <li><strong>All app data</strong>: clear via Android Settings → Apps → Metrou București → Storage → Clear Data, or by uninstalling</li>
         </ul>
     </section>
 
@@ -337,7 +375,7 @@
         </div>
         <ul>
             <li>All local data is protected by standard Android application sandboxing</li>
-            <li>Network connections to OSM, AdMob and Firebase use HTTPS/TLS</li>
+            <li>All connections to external services use HTTPS/TLS</li>
             <li>No sensitive personal data (passwords, financial information, health data) is ever collected or stored</li>
             <li>The App does not implement its own user accounts or authentication</li>
         </ul>
@@ -348,7 +386,7 @@
             <div class="section-num">09</div>
             <h2>Policy Updates</h2>
         </div>
-        <p>We will update this policy when data practices change materially — for example if new third-party services are added. Changes are indicated by the "Last updated" date above. Continued use of the App after the effective date constitutes acceptance.</p>
+        <p>We will update this policy when data practices change materially, for example if new third-party services are added. Changes are indicated by the "Last updated" date above. Continued use of the App after the effective date constitutes acceptance.</p>
     </section>
 
     <section class="section" id="s10">
@@ -358,7 +396,7 @@
         </div>
         <p>For data-related questions or requests:</p>
         <ul>
-            <li><strong>Email:</strong> <a href="mailto:help@metroubucuresti.ro">help@metroubucuresti.ro</a></li>
+            <li><strong>Email:</strong> <a href="mailto:contact@metroubucuresti.ro">contact@metroubucuresti.ro</a></li>
             <li><strong>In-app:</strong> Settings → About → Contact</li>
             <li><strong>Website:</strong> <a href="https://www.metroubucuresti.ro" target="_blank">www.metroubucuresti.ro</a></li>
         </ul>
@@ -370,11 +408,11 @@
     <p class="footer-brand">Metrou București</p>
     <p>Unofficial metro navigation app for Bucharest · Android</p>
     <div class="footer-links">
-        <a href="mailto:help@metroubucuresti.ro">help@metroubucuresti.ro</a>
+        <a href="mailto:contact@metroubucuresti.ro">contact@metroubucuresti.ro</a>
         <a href="metrou-bucuresti-terms.html">Terms &amp; Conditions</a>
         <a href="metrou-bucuresti-privacy.html">Privacy Policy</a>
     </div>
-    <p class="footer-copyright">© 2024–2026 Metrou București. All rights reserved.</p>
+    <p class="footer-copyright">© 2024-2026 Metrou București. All rights reserved.</p>
 </footer>
 
 </body>
